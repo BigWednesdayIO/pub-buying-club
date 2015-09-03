@@ -1,6 +1,4 @@
-# Angular Sekelton App
-
-> A common starting point for an AngularJS app from the [Big Wednesday IO](http://bigwednesday.io) team
+# Pub Buying Club
 
 ## Used in this project
 
