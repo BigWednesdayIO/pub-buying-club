@@ -1,0 +1,16 @@
+.selectable-table {
+	border-spacing: 0;
+
+	tr:hover {
+		cursor: pointer;
+	}
+
+	td {
+		padding: 0 $pad-half;
+		line-height: 2.5;
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+}

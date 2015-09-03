@@ -1,0 +1,41 @@
+<div class="modal is-narrow">
+	<div class="inner">
+		<h1>Select outlet</h1>
+
+		<form>
+			<ul class="form-rows">
+				<li class="form-row">
+					<input type="tel" id="id" name="id" ng-model="vm.filterOptions.id" />
+					<label for="id">Outlet id</label>
+				</li>
+				<li class="form-row">
+					<input type="text" id="name" name="name" ng-model="vm.filterOptions.name" />
+					<label for="name">Outlet name</label>
+				</li>
+				<li class="form-row">
+					<input type="text" id="postcode" name="postcode" ng-model="vm.filterOptions.postcode" />
+					<label for="postcode">Outlet postcode</label>
+				</li>
+			</ul>
+		</form>
+
+		<h2>Select an outlet</h2>
+
+		<table class="selectable-table">
+			<thead class="visually-hidden">
+				<tr>
+					<th span="col">id</th>
+					<th span="col">name</th>
+					<th span="col">postcode</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="outlet in vm.outlets | filter:vm.filterOptions track by outlet.id" ng-click="vm.selectOutlet(outlet)">
+					<td ng-bind="::outlet.id"></span>
+					<td ng-bind="::outlet.name"></span>
+					<td ng-bind="::outlet.postcode"></span>
+				</td>
+			</tbody>
+		</table>
+	</div>
+</div>

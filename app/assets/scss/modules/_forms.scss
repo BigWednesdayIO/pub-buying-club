@@ -1,0 +1,33 @@
+.form-rows {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.form-row {
+	display: flex;
+	flex-flow: column-reverse nowrap;
+
+	& + & {
+		margin-top: $pad;
+	}
+
+	input + label::after {
+		content: " (optional):"
+	}
+
+	input[required] + label::after {
+		content: ":"
+	}
+
+	&.with-cta {
+		padding-top: $pad;
+
+		button {
+			display: block;
+			width: 100%;
+			max-width: 26empx;
+			margin: 0 auto;
+		}
+	}
+}

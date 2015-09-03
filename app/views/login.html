@@ -1,0 +1,23 @@
+<div class="modal is-narrow">
+	<div class="inner">
+		<h1>Log in</h1>
+
+		<form name="vm.loginForm" ng-submit="vm.submitLogin($event)" novalidate>
+			<p class="error" ng-bind="vm.errorMessage"></p>
+
+			<ol class="form-rows">
+				<li class="form-row">
+					<input type="email" id="email" name="email" ng-model="vm.email" required />
+					<label for="email">Email</label>
+				</li>
+				<li class="form-row">
+					<input type="password" id="password" name="password" ng-model="vm.password" required />
+					<label for="password">Password</label>
+				</li>
+				<li class="form-row with-cta">
+					<button class="primary" type="submit">Log in</button>
+				</li>
+			</ol>
+		</form>
+	</div>
+</div>
