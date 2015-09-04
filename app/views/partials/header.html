@@ -1,3 +1,23 @@
-HEADER
+<div class="site-header">
+	<div class="content-wrap">
+		<img src="/assets/images/logo.png" alt="Pub Buying Club" height="60" width="60" class="logo" />
 
-<button ng-click="vm.logout()">Logout</button>
+		<nav class="primary-navigation">
+			<a href="/">Home</a>
+			<a href="/shop">Shop</a>
+			<a href="/account">Account</a>
+			<a href="/profile">Your profile</a>
+		</nav>
+
+		<div class="dropdown-button user-status">
+			<button class="dropdown-button__button user">
+				<span>Alex Knights</span>
+				<img class="icon" src="//placehold.it/20x20" alt />
+			</button>
+			<ul class="dropdown-button__list user-nav">
+				<li><a href="/login/select-outlet">Big Wednesday Arms</a></li>
+				<li><button class="text-only-button" ng-click="vm.logout()">Logout</button></li>
+			</ul>
+		</div>
+	</div>
+</div>

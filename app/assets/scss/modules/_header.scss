@@ -1,0 +1,51 @@
+.site-header {
+	padding: $pad 0;
+}
+
+.logo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.user-status {
+	position: absolute;
+	top: -$pad;
+	right: 0;
+}
+
+.primary-navigation {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: $pad;
+
+	a + a{
+		margin-left: $pad;
+	}
+}
+
+.secondary-navigation {
+	&:empty {
+		display: none;
+	}
+
+	padding: $pad*3/4 0;
+
+	&__inner {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	a {
+		padding: $pad/4 $pad-half;
+		margin: $pad/4;
+	}
+
+	@media (min-width: 55em) {
+		flex-flow: row nowrap;
+		padding: 0;
+
+		a {
+			flex-grow: 1;
+		}
+	}
+}

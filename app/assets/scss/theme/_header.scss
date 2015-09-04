@@ -1,0 +1,73 @@
+.site-header {
+	background: $brand-light;
+	border-bottom: 1px solid $border-light;
+
+	@media (min-width: 55em) {
+		border-bottom: 0 none;
+	}
+}
+
+.primary-navigation {
+	font-size: 18px;
+	text-transform: uppercase;
+
+	a {
+		color: $body-text;
+		padding: $pad-half;
+
+		&:hover {
+			background: $highlight-color;
+			text-decoration: none;
+		}
+	}
+}
+
+.secondary-navigation {
+	font-size: 14px;
+		
+	a {
+		text-transform: uppercase;
+		text-decoration: none;
+		background: $ui-primary-bg;
+		color: $ui-primary-text;
+		border-radius: 3px;
+	}
+
+	@media (min-width: 55em) {
+		background: $brand-light;
+		border-bottom: 1px solid $border-light;
+		text-align: center;
+		line-height: 2;
+
+		&__inner {
+			margin-bottom: -1px;	
+		}
+
+		a {
+			margin: 0;
+			padding: 0;
+			border: 1px solid transparent;
+			border-bottom: 0 none;
+			border-radius: 0;
+			background: transparent;
+			color: $brand-mid;
+
+			&:hover {
+				background: $ui-primary-bg;
+				color: $ui-primary-text;
+				border-color: $border-light;
+			}
+
+			&.active {
+				background: white;
+				color: $body-text;
+				border-color: $border-light;
+				box-shadow: 0 1px 0 0 white;
+			}
+		}
+	}
+
+	@media (min-width: 68em) {
+		font-size: 16px;
+	}
+}
