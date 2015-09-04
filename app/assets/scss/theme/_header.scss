@@ -7,9 +7,23 @@
 	}
 }
 
+.header-buttons {
+	border: 0 none;
+	border-left: 1px solid $border-color;
+	background: transparent;
+	padding: 0;
+
+	&:active {
+		background: $highlight-color;
+	}
+}
+
 .primary-navigation {
-	font-size: 18px;
 	text-transform: uppercase;
+
+	@media (min-width: 40em) {
+		font-size: 18px;
+	}
 
 	a {
 		color: $body-text;

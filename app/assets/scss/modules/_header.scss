@@ -1,25 +1,85 @@
 .site-header {
-	padding: $pad 0;
+	&__inner {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: stretch;
+		margin: 0 $pad*-1;
+	}
+
+	.header-buttons {
+		flex-grow: 1;
+	}
+
+	@media (min-width: 34em) {
+		padding: $pad 0;
+		margin: 0;
+
+		&__inner {
+			display: block;
+		}
+	}
+}
+
+.user-status {
+	display: none;
+	position: absolute;
+	top: -$pad;
+	right: 0;
+
+	@media (min-width: 34em) {
+		display: block;
+	}
 }
 
 .logo {
 	display: inline-block;
-	vertical-align: middle;
 }
 
-.user-status {
-	position: absolute;
-	top: -$pad;
-	right: 0;
+.header-buttons {
+	@media (min-width: 34em) {
+		display: none;
+	}
 }
+
 
 .primary-navigation {
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: $pad;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
 
-	a + a{
+	&.is-hidden {
+		display: none;
+	}
+
+	a {
+		display: block;
+	}
+
+	@media (min-width: 34em) {
+		display: inline-block;
+		position: static;
 		margin-left: $pad;
+
+		&.is-hidden {
+			// ignore mobile nav toggling
+			display: inline-block;
+		}
+
+		a {
+			display: inline-block;
+
+			+ a {
+				margin-left: $pad;
+			}
+		}
+	}
+}
+
+@media (min-width: 48em) {
+	.logo,
+	.primary-navigation {
+		vertical-align: middle;
 	}
 }
 
