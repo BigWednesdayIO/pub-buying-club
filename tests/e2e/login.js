@@ -8,7 +8,7 @@ describe('Login page', function() {
 
 	beforeEach(function() {
 		browser.executeScript('localStorage.clear()');
-		browser.get('/');
+		browser.get('/login');
 	});
 
 	it('should login with valid credentials', function() {
@@ -18,7 +18,7 @@ describe('Login page', function() {
 		loginForm.element(by.css('button[type="submit"]'))
 			.click()
 			.then(function() {
-				expect(browser.getCurrentUrl()).toMatch('/dashboard');
+				expect(browser.getCurrentUrl()).not.toMatch('/login');
 			});
 	});
 
