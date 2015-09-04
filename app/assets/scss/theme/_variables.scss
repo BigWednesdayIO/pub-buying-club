@@ -1,9 +1,19 @@
+// Brand
+$brand-dark: #005030; // racing green
+$brand-mid: #97662a; // gold
+$brand-light: #f9f7f3; // beige
+
 // Colors
 $error: red;
-$modal-background: #f5f5f5;
+$modal-background: $brand-light;
 $shadow: rgba(0, 0, 0, .7);
-$border-color: grey;
-$highlight-color: rgba(0, 0, 100, .1);
+$border-color: $brand-mid;
+$border-light: #e0d1bf;
+$highlight-color: rgba(0, 100, 0, .1);
+$body-text: black;
+
+$ui-primary-bg: $brand-dark;
+$ui-primary-text: white;
 
 // Variables
 $pad: 1em;
@@ -13,3 +23,8 @@ $pad-double: $pad*2;
 
 // Fonts
 $body-font: Helvetica, Arial, Sans;
+
+// Transitions
+$transition-fast: .15s;
+$transition-slow: .3s;
+$transition: $transition-fast; // default
