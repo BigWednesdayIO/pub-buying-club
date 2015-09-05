@@ -1,0 +1,13 @@
+.search-bar {
+	display: flex;
+	flex-flow: row nowrap;
+	padding: $pad;
+
+	input {
+		width: 75%;
+	}
+
+	button {
+		width: 25%;
+	}
+}

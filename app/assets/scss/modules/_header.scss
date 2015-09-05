@@ -1,8 +1,30 @@
 body {
 	padding-top: 60px;
+	transition: transform $transition;
 
 	@media (min-width: 34em) {
 		padding-top: 0;
+	}
+}
+
+.show-search {
+	transform: translateY(70px) translateZ(0);
+
+	@media (min-width: 34em) {
+		transform: none;
+	}
+}
+
+.mobile-search {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 100%;
+	z-index: 200;
+	border-bottom: 1px solid $border-color;
+
+	@media (min-width: 34em) {
+		display: none;
 	}
 }
 

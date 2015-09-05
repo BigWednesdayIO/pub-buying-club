@@ -1,4 +1,4 @@
-function HeaderController ($state, authentication) {
+function HeaderController ($rootScope, $state, authentication) {
 	var vm = this;
 
 	vm.logout = function() {
@@ -11,7 +11,11 @@ function HeaderController ($state, authentication) {
 
 	vm.changeOutlet = function() {
 		$state.go('select-outlet');
-	}
+	};
+
+	vm.toggleSearch = function() {
+		$rootScope.showSearch = !$rootScope.showSearch;
+	};
 }
 
 angular
