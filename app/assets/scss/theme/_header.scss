@@ -1,25 +1,40 @@
 .site-header {
 	background: $brand-light;
-	border-bottom: 1px solid $border-light;
+
+	@media (min-width: 34em) {
+		border-bottom: 1px solid $border-color;
+	}
 
 	@media (min-width: 55em) {
 		border-bottom: 0 none;
 	}
 }
 
-.header-buttons {
-	border: 0 none;
-	border-left: 1px solid $border-color;
-	background: transparent;
-	padding: 0;
+.logo {
+	border-bottom: 1px solid $border-color;
 
-	&:active {
-		background: $highlight-color;
+	@media (min-width: 34em) {
+		border: 0 none;
 	}
 }
 
+.header-buttons {
+	border: 0 none;
+	border-left: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+	background: $brand-light;
+	padding: 0;
+}
+
 .primary-navigation {
+	background: $body-bg;
 	text-transform: uppercase;
+	border-bottom: 1px solid $border-color;
+
+	@media (min-width: 34em) {
+		background: transparent;
+		border: 0 none;
+	}
 
 	@media (min-width: 40em) {
 		font-size: 18px;
@@ -28,6 +43,7 @@
 	a {
 		color: $body-text;
 		padding: $pad-half;
+		border-bottom: 1px solid $border-light;
 
 		&:hover {
 			background: $highlight-color;
