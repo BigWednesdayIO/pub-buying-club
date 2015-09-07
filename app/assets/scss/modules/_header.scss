@@ -66,6 +66,7 @@ body {
 
 .logo {
 	display: inline-block;
+	vertical-align: middle;
 	z-index: 100;
 }
 
@@ -97,13 +98,13 @@ body {
 	}
 
 	@media (min-width: 34em) {
-		display: inline-block;
 		position: static;
+		display: inline-block;
+		vertical-align: middle;
 		margin-left: $pad;
 
 		&.is-hidden {
-			// ignore mobile nav toggling
-			display: inline-block;
+			transform: none;
 		}
 
 		a {
