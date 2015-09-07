@@ -60,12 +60,35 @@ button {
 	box-shadow: none;
 }
 
-.primary-button {
+.primary-button,
+.secondary-button {
 	padding: $pad-half;
+	border: 1px solid;
+	text-transform: uppercase;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.primary-button {
 	background: $ui-primary-bg;
 	color: $ui-primary-text;
-	border: 1px solid $ui-primary-bg;
-	text-transform: uppercase;
+	border-color: $ui-primary-bg;
+
+	&:hover {
+		color: $ui-primary-text;
+	}
+}
+
+.secondary-button {
+	background: $ui-secondary-bg;
+	color: $ui-secondary-text;
+	border-color: 1px solid $ui-secondary-text;
+
+	&:hover {
+		color: $ui-secondary-text;
+	}
 }
 
 .text-only-button {
