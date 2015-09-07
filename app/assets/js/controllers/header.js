@@ -13,10 +13,10 @@ function HeaderController ($rootScope, $state, authentication) {
 		$state.go('select-outlet');
 	};
 
-	vm.activeMenu = '';
+	vm.activeMenu = null;
 
 	vm.showMenu = function(menu) {
-		vm.activeMenu = (vm.activeMenu === menu) ? '' : menu;
+		vm.activeMenu = (vm.activeMenu === menu) ? null : menu;
 	};
 }
 
