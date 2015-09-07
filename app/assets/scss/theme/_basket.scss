@@ -1,0 +1,30 @@
+.basket {
+	td {
+		padding: $pad-half 0;
+
+		&:not(:first-child) {
+			vertical-align: top;
+		}
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+
+	tr + tr {
+		td {
+			border-top: 1px solid $border-light;
+		}
+	}
+
+	.product-name {
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: 1;
+	}
+
+	.price {
+		font-weight: bold;
+		vertical-align: top;
+	}
+}

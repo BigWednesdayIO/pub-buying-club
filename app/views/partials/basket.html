@@ -1,0 +1,38 @@
+<div class="basket">
+	<table>
+		<thead class="visually-hidden">
+			<tr>
+				<th scope="col">Quantity</th>
+				<th scope="col">Product</th>
+				<th scope="col">Price</th>
+				<th scope="col">Remove?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="line_item in vm.basket.line_items">
+				<td>
+					<label for="quantity-{{$index}}" class="visually-hidden">Quantity of <span ng-bind="line_item.product.name"></span></label>
+					<input type="number" id="quantity-{{$index}}" class="quantity" ng-model="line_item.quantity" ng-change="vm.updateLineItem(line_item, $index)" ng-model-options="vm.debounceOptions" />
+				</td>
+				<td>
+					<h4 class="product-name" ng-bind="line_item.product.name"></h4>
+					<p class="product-description">
+						<span ng-bind="line_item.product.unit_price | currency:'£'"></span> / <span ng-bind="line_item.product.size"></span>
+					</p>
+				</td>
+				<td class="price" ng-bind="line_item.subtotal | currency:'£'"></td>
+				<td>
+					<button type="button" class="text-only-button" ng-click="vm.removeLineItem(line_item, $index)">[&times;]</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="basket-summary">
+		<p class="totals">
+			<span class="total excluding-vat"><span ng-bind="vm.basket.subtotal - vm.basket.tax | currency: '£'"></span> exVAT</span>
+			<span class="total including-vat">(<span ng-bind="vm.basket.subtotal | currency: '£'"></span>) incVAT</span>
+		</p>
+		<a href="/checkout/" class="primary-button">Checkout</a>
+	</div>
+</div>
