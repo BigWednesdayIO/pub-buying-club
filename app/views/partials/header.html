@@ -1,5 +1,4 @@
 <div class="site-header">
-	<search-bar></search-bar>
 	<div class="content-wrap">
 		<div class="site-header__inner">
 			<img src="/assets/images/logo.png" alt="Pub Buying Club" height="60" width="60" class="logo" />
@@ -12,9 +11,10 @@
 				<a href="/profile">Your profile</a>
 			</nav>
 
-			<button type="button" class="search-button header-buttons" ng-click="vm.toggleSearch()"><img src="/assets/images/search.svg" height="25" width="25" alt="Search" /></button>
-			<button type="button" class="user-button header-buttons" ng-click="vm.showMenu('user')"><img src="/assets/images/user.svg" height="25" width="25" alt="User menu" /></button>
+			<button type="button" class="search-button header-buttons" ng-click="vm.showMenu('search')"><img src="/assets/images/search.svg" height="25" width="25" alt="Search" /></button>
+			<search-bar class="mobile-search" ng-class="{'is-hidden': vm.activeMenu !== 'search'}"></search-bar>
 
+			<button type="button" class="user-button header-buttons" ng-click="vm.showMenu('user')"><img src="/assets/images/user.svg" height="25" width="25" alt="User menu" /></button>
 			<div class="dropdown-button user-status" ng-class="{'is-hidden': vm.activeMenu !== 'user'}">
 				<button type="button" class="dropdown-button__button user">
 					<span>Alex Knights</span>
@@ -27,6 +27,8 @@
 			</div>
 
 			<button type="button" class="basket-button header-buttons"><img src="/assets/images/shopping-cart.svg" height="25" width="25" alt="Basket"></button>
+			<!-- TODO put mini basket here -->
 		</div>
 	</div>
 </div>
+<div class="placeholder"></div>

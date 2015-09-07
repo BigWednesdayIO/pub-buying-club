@@ -13,10 +13,6 @@ function HeaderController ($rootScope, $state, authentication) {
 		$state.go('select-outlet');
 	};
 
-	vm.toggleSearch = function() {
-		$rootScope.showSearch = !$rootScope.showSearch;
-	};
-
 	vm.activeMenu = '';
 
 	vm.showMenu = function(menu) {
