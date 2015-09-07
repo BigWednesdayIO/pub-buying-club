@@ -2,14 +2,11 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 		.state('root', {
 			views: {
-				'header': {
+				header: {
 					controller: 'HeaderController as vm',
 					templateUrl: 'views/partials/header.html'
 				},
-				'secondary-navigation': {
-					templateUrl: 'views/partials/navigation--shop.html'
-				},
-				'footer': {
+				footer: {
 					templateUrl: 'views/partials/footer.html'
 				}
 			}
@@ -31,15 +28,30 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 			templateUrl: 'views/select-outlet.html'
 		})
 
-		.state('home', {
+
+		.state('shop', {
 			parent: 'root',
-			url: '/',
 			views: {
 				'@': {
-					templateUrl: 'views/home.html'
+					templateUrl: 'views/layouts/main.html'
+				},
+				'secondary-navigation@': {
+					templateUrl: 'views/partials/navigation--shop.html'
+				},
+				'sidebar@shop': {
+					templateUrl: 'views/partials/sidebar--shop.html'
 				}
 			}
-		});
+		})
+			.state('home', {
+				parent: 'shop',
+				url: '/',
+				views: {
+					'main@shop': {
+						templateUrl: 'views/home.html'
+					}
+				}
+			});
 
 	$urlRouterProvider.otherwise("/login");
 
