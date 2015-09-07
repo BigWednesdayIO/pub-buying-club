@@ -2,11 +2,14 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 		.state('root', {
 			views: {
-				header: {
+				'header': {
 					controller: 'HeaderController as vm',
 					templateUrl: 'views/partials/header.html'
 				},
-				footer: {
+				'secondary-navigation': {
+					templateUrl: 'views/partials/navigation--shop.html'
+				},
+				'footer': {
 					templateUrl: 'views/partials/footer.html'
 				}
 			}

@@ -6,13 +6,20 @@
 @import 'theme/base';
 
 // Layout
-
+@import 'layout/main';
 
 // Modules
+@import 'modules/dropdown-button';
+@import 'modules/footer';
 @import 'modules/forms';
+@import 'modules/header';
 @import 'modules/modal';
+@import 'modules/search-bar';
 @import 'modules/selectable-table';
 
 // Theme
+@import 'theme/dropdown-button';
+@import 'theme/footer';
+@import 'theme/header';
 @import 'theme/modal';
 @import 'theme/selectable-table';

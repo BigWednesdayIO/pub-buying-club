@@ -2,7 +2,7 @@
 	background: $shadow;
 
 	.inner {
-		border: 1px solid gray;
+		border: 1px solid $border-color;
 		border-radius: $pad;
 		background: $modal-background;
 	}

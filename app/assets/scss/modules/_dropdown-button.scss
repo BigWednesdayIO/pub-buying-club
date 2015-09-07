@@ -1,0 +1,28 @@
+.dropdown-button {
+	max-height: 36px;
+	overflow: hidden;
+	transition: max-height $transition ease-out;
+
+	&:hover {
+		max-height: 100vh;
+		transition: max-height $transition ease-in;
+	}
+
+	&__button {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		border: 0 none;
+		padding: $pad-half;
+	}
+
+	&__list {
+		font-size: 14px;
+
+		> li {
+			padding: $pad/4 $pad-half;
+		}
+	}
+}

@@ -1,0 +1,149 @@
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	transition: transform $transition;
+
+	.show-search & {
+		transform: translateY(70px) translateZ(0);
+
+		@media (min-width: 34em) {
+			transform: none;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: stretch;
+		margin: 0 $pad*-1;
+	}
+
+	@media (min-width: 34em) {
+		position: static;
+		padding: $pad 0;
+		margin: 0;
+
+		&__inner {
+			display: block;
+		}
+	}
+
+	+ .placeholder {
+		padding-top: 60px;
+
+		@media (min-width: 34em) {
+			padding-top: 0;
+		}
+	}
+}
+
+.user-status,
+.mobile-search,
+.primary-navigation {
+	position: absolute;
+	top: 100%;
+	left: -$pad;
+	right: -$pad;
+	z-index: 99;
+	transform: translateY(0) translateZ(0);
+	transition: transform $transition;
+
+	&.is-hidden {
+		transform: translateY(-100%) translateZ(0);
+
+		@media (min-width: 34em) {
+			transform: none;
+		}
+	}
+}
+
+
+.mobile-search {
+	border-bottom: 1px solid $border-color;
+
+	@media (min-width: 34em) {
+		display: none !important;
+	}
+}
+
+.user-status {
+	// 1px less than 34em
+	@media (max-width: 33.9375em) {
+		&.dropdown-button {
+			max-height: none;
+		}
+	}
+
+	@media (min-width: 34em) {
+		top: -$pad;
+		left: auto;
+		right: 0;
+	}
+}
+
+.logo {
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 100;
+}
+
+.header-buttons {
+	flex-grow: 1;
+	z-index: 100;
+
+	@media (min-width: 34em) {
+		display: none;
+	}
+}
+
+
+.primary-navigation {
+	a {
+		display: block;
+	}
+
+	@media (min-width: 34em) {
+		position: static;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: $pad;
+
+		a {
+			display: inline-block;
+
+			+ a {
+				margin-left: $pad;
+			}
+		}
+	}
+}
+
+.secondary-navigation {
+	&:empty {
+		display: none;
+	}
+
+	padding: $pad*3/4 0;
+
+	&__inner {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	a {
+		padding: $pad/4 $pad-half;
+		margin: $pad/4;
+	}
+
+	@media (min-width: 55em) {
+		flex-flow: row nowrap;
+		padding: 0;
+
+		a {
+			flex-grow: 1;
+		}
+	}
+}

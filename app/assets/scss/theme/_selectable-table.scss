@@ -5,6 +5,6 @@
 
 	tr:hover {
 		background: $highlight-color;
-		transition: background .15s;
+		transition: background $transition;
 	}
 }

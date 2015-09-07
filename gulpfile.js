@@ -72,7 +72,7 @@ gulp.task('reload', function() {
 gulp.task('watch', function() {
 	gulp.watch('app/assets/scss/{,*/_}*.scss', ['build:css']);
 	gulp.watch('app/assets/js/{main,*/*}.js', ['build:js']);
-	gulp.watch('app/{index,views/*,assets/partials/*}.html', ['reload']);
+	gulp.watch('app/{index,views/{,partials/}*}.html', ['reload']);
 });
 
 gulp.task('default', ['build', 'serve', 'watch']);
