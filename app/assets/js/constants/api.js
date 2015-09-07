@@ -5,8 +5,10 @@ function APIConstant () {
 
 	API.authentication = API.base + 'v1/authentication';
 	API.baskets = API.base + 'v1/baskets';
-	API.users = API.base + 'v1/users';
 	API.outlets = API.base + 'v1/outlets';
+	API.search = API.base + 'v1/search';
+	API.users = API.base + 'v1/users';
+
 	return API;
 }
 

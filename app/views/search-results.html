@@ -1,0 +1,20 @@
+<h1 ng-bind="vm.query"></h1>
+
+<ul>
+	<li ng-repeat="product in vm.results">
+		<h3><a ng-href="{{product.url}}" ng-bind="product.name"></a></h3>
+		<p ng-bind="product.color"></p>
+		<p ng-bind="product.description"></p>
+		<ul>
+			<li><strong ng-bind="product.abv"></strong> ABV</li>
+			<li><strong ng-bind="product.size"></strong> (<span ng-bind="product.pack_size"></span>)</li>
+			<li><strong ng-bind="product.price | currency: '£'"></strong> exVAT</li>
+		</ul>
+
+		<form ng-submit="vm.addToBasket(product)">
+			<input id="quantity-{{$index}}" type="number" value="1" />
+			<label for="quantity-{{$index}}" class="visually-hidden">Quantity</label>
+			<button type="submit">+ Add</button>
+		</form>
+	</li>
+</ul>

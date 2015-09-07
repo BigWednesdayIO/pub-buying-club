@@ -1,6 +1,19 @@
 .basket {
 	font-size: 1.4rem;
 
+	td {
+		padding: $pad-half $pad/4;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+			text-align: right;
+		}
+	}
+
 	.product-name,
 	.product-description {
 		margin: 0;

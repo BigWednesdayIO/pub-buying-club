@@ -32,6 +32,17 @@ function BasketService ($http, $q, $log, API, universal_variable, browserStorage
 			});
 	};
 
+	service.addToBasket = function(product) {
+		// TODO proper API call
+
+		universal_variable.basket.line_items.push({
+			product: product,
+			quantity: 1,
+			subtotal: product.unit_price,
+			total_discount: 0
+		})
+	}
+
 	(function initBasket () {
 		// No need to check browserStorage  again, it's only just been checked at the top of the file
 		if (basket_id) {
