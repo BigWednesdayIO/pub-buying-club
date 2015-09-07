@@ -1,0 +1,59 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.6em;
+	line-height: 1.6;
+}
+
+body {
+	font-family: $body-font;
+}
+
+// Headings
+h1 {
+	margin-top: 0;
+}
+
+
+// Forms
+.error {
+	color: $error;
+}
+
+input,
+select,
+textarea
+button {
+	margin: 0;
+	font-family: $body-font;
+	border-radius: 0;
+}
+
+input {
+	padding: 0;
+	border: 1px solid $border-color;
+	font-size: inherit;
+	line-height: 1em;
+	padding: $pad-half;
+}
+
+button {
+	font-size: inherit;
+	line-height: 1em;
+	padding: $pad-half;
+	box-shadow: none;
+}
+
+// Utility
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
