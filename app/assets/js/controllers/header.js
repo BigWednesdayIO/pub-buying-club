@@ -16,6 +16,12 @@ function HeaderController ($rootScope, $state, authentication) {
 	vm.toggleSearch = function() {
 		$rootScope.showSearch = !$rootScope.showSearch;
 	};
+
+	vm.activeMenu = '';
+
+	vm.showMenu = function(menu) {
+		vm.activeMenu = (vm.activeMenu === menu) ? '' : menu;
+	};
 }
 
 angular

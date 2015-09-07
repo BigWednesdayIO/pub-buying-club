@@ -4,8 +4,8 @@
 		<div class="site-header__inner">
 			<img src="/assets/images/logo.png" alt="Pub Buying Club" height="60" width="60" class="logo" />
 
-			<button type="button" class="menu-button header-buttons" ng-click="vm.showMenu = !vm.showMenu"><img src="/assets/images/bars.svg" height="25" width="25" alt="Menu" /></button>
-			<nav class="primary-navigation" ng-class="{'is-hidden': !vm.showMenu}">
+			<button type="button" class="menu-button header-buttons" ng-click="vm.showMenu('primary')"><img src="/assets/images/bars.svg" height="25" width="25" alt="Menu" /></button>
+			<nav class="primary-navigation" ng-class="{'is-hidden': vm.activeMenu !== 'primary'}">
 				<a href="/">Home</a>
 				<a href="/shop">Shop</a>
 				<a href="/account">Account</a>
@@ -13,9 +13,9 @@
 			</nav>
 
 			<button type="button" class="search-button header-buttons" ng-click="vm.toggleSearch()"><img src="/assets/images/search.svg" height="25" width="25" alt="Search" /></button>
-			<button type="button" class="user-button header-buttons"><img src="/assets/images/user.svg" height="25" width="25" alt="User menu" /></button>
+			<button type="button" class="user-button header-buttons" ng-click="vm.showMenu('user')"><img src="/assets/images/user.svg" height="25" width="25" alt="User menu" /></button>
 
-			<div class="dropdown-button user-status">
+			<div class="dropdown-button user-status" ng-class="{'is-hidden': vm.activeMenu !== 'user'}">
 				<button type="button" class="dropdown-button__button user">
 					<span>Alex Knights</span>
 					<img class="icon" src="//placehold.it/20x20" alt />

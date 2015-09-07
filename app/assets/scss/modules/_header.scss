@@ -54,13 +54,22 @@ body {
 }
 
 .user-status {
-	display: none;
 	position: absolute;
-	top: -$pad;
-	right: 0;
+	top: 100%;
+	left: -1em;
+	right: -1em;
+
+	// 1px less than 34em
+	@media (max-width: 33.9375em) {
+		&.dropdown-button {
+			max-height: none;
+		}
+	}
 
 	@media (min-width: 34em) {
-		display: block;
+		top: -$pad;
+		left: auto;
+		right: 0;
 	}
 }
 
@@ -86,12 +95,6 @@ body {
 	left: -$pad;
 	right: -$pad;
 	z-index: 99;
-	transform: translateY(0) translateZ(0);
-	transition: transform $transition;
-
-	&.is-hidden {
-		transform: translateY(-100%) translateZ(0);
-	}
 
 	a {
 		display: block;
@@ -103,16 +106,26 @@ body {
 		vertical-align: middle;
 		margin-left: $pad;
 
-		&.is-hidden {
-			transform: none;
-		}
-
 		a {
 			display: inline-block;
 
 			+ a {
 				margin-left: $pad;
 			}
+		}
+	}
+}
+
+.user-status,
+.primary-navigation {
+	transform: translateY(0) translateZ(0);
+	transition: transform $transition;
+
+	&.is-hidden {
+		transform: translateY(-100%) translateZ(0);
+
+		@media (min-width: 34em) {
+			transform: none;
 		}
 	}
 }
