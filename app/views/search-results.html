@@ -1,20 +1,52 @@
 <h1 ng-bind="vm.query"></h1>
 
 <ul>
-	<li ng-repeat="product in vm.results">
-		<h3><a ng-href="{{product.url}}" ng-bind="product.name"></a></h3>
-		<p ng-bind="product.color"></p>
-		<p ng-bind="product.description"></p>
-		<ul>
-			<li><strong ng-bind="product.abv"></strong> ABV</li>
-			<li><strong ng-bind="product.size"></strong> (<span ng-bind="product.pack_size"></span>)</li>
-			<li><strong ng-bind="product.price | currency: '£'"></strong> exVAT</li>
-		</ul>
+	<li ng-repeat="product in vm.results" class="product-thumb">
+		<div class="product-thumb__upper">
+			<a ng-href="{{product.url}}">
+				<img src="//placehold.it/100x100" alt="{{product.name}}" class="product-thumb__image" />
+			</a>
+			<div class="product-thumb__info">
+				<h3 class="product-thumb__name"><a class="header-link" ng-href="{{product.url}}" ng-bind="product.name"></a></h3>
+				<p class="product-thumb__variant" ng-bind="product.color"></p>
+				<p class="product-thumb__description" ng-bind="product.description"></p>
+				<ul class="product-thumb__attributes">
+					<li><strong ng-bind="product.abv"></strong> ABV</li>
+					<li><strong ng-bind="product.size"></strong> (<span ng-bind="product.pack_size"></span>)</li>
+					<li><strong ng-bind="product.price | currency: '£'"></strong> exVAT</li>
+				</ul>
+			</div>
+		</div>
 
-		<form ng-submit="vm.addToBasket(product)">
-			<input id="quantity-{{$index}}" type="number" value="1" />
-			<label for="quantity-{{$index}}" class="visually-hidden">Quantity</label>
-			<button type="submit">+ Add</button>
-		</form>
+		<div class="product-thumb__lower">
+			<div class="product-thumb__more-info" ng-show="vm['is-expanded-' + $index]">
+				<div class="product-thumb__long-description">
+					<h4 class="product-thumb__more-info__heading">Pinot Grigio Sant Orsola Cuvee</h4>
+					<p>Floral, racy and dry with green, crisp fruit. Winners of the Commended IWC 2011 award. Floral, racy and dry with green, crisp fruit. Winners of the Commended IWC 2011 award. Floral, racy and dry with green, crisp fruit. Winners of the Commended IWC 2011 award. Floral, racy and dry with green, crisp fruit. Winners of the Commended IWC 2011 award. Floral, racy and dry with green, crisp fruit. Winners of the Commended IWC 2011 award.</p>
+				</div>
+				<div class="product-thumb__product-details">
+					<h4 class="product-thumb__more-info__heading">Product Details</h4>
+					<ul>
+						<li><strong>Brand:</strong> Other Brands</li>
+						<li><strong>Pack Type:</strong> Bottled Wine </li>
+						<li><strong>Size:</strong> 75cl</li>
+						<li><strong>Case Size:</strong> 6x 75cl</li>
+						<li><strong>Colour:</strong> White Wine</li>
+						<li><strong>Closure:</strong> Screwcap</li>
+						<li><strong>Origin:</strong> Italy</li>
+						<li><strong>Grape variety:</strong> Pinot Grigio</li>
+						<li><strong>Tasting guide:</strong> Very dry, delicate, subtle whites</li>
+					</ul>
+				</div>
+			</div>
+
+			<button class="text-only-button" ng-click="vm['is-expanded-' + $index] = !vm['is-expanded-' + $index]">More info</button>
+
+			<form ng-submit="vm.addToBasket(product)" class="flex">
+				<input id="quantity-{{$index}}" type="number" value="1" class="quantity" />
+				<label for="quantity-{{$index}}" class="visually-hidden">Quantity</label>
+				<button type="submit" class="primary-button">+ Add</button>
+			</form>
+		</div>
 	</li>
 </ul>

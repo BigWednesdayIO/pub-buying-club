@@ -19,13 +19,8 @@
 		margin: 0;
 	}
 
-	.quantity {
-		width: 3.5em;
-	}
-
 	.basket-summary {
 		display: flex;
-		flex-flow: row nowrap;
 		align-items: center;
 		justify-content: space-between;
 	}
