@@ -6,6 +6,22 @@
 		padding-top: $pad-and-half;
 	}
 
+	&__name {
+		color: $link;
+
+		&:hover {
+			color: $link-hover;
+		}
+	}
+
+	&__image {
+		border: 1px solid $link;
+
+		&:hover {
+			border-color: $link-hover;
+		}
+	}
+
 	&__lower {
 		background: $brand-light;
 		border: 1px solid $border-light;

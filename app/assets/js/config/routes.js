@@ -62,6 +62,17 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 						templateUrl: 'views/search-results.html'
 					}
 				}
+			})
+			.state('category-page', {
+				parent: 'shop',
+				url: '/shop/{query:.+}',
+				views: {
+					'main@shop': {
+						controller: 'SearchResultsController as vm',
+						resolve: SearchResultsController.resolve,
+						templateUrl: 'views/search-results.html'
+					}
+				}
 			});
 
 	$urlRouterProvider.otherwise("/login");

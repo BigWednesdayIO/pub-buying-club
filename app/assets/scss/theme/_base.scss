@@ -40,12 +40,13 @@ h1 {
 	color: $error;
 }
 
-a {
-	color: $brand-mid;
+a,
+.text-only-button {
+	color: $link;
 	text-decoration: none;
 
 	&:hover {
-		color: $brand-dark;
+		color: $link-hover;
 		text-decoration: underline;
 	}
 }
@@ -109,10 +110,6 @@ button {
 	border: 0 none;
 	background: transparent;
 	cursor: pointer;
-
-	&:hover {
-		text-decoration: underline;
-	}
 }
 
 .quantity {
