@@ -1,4 +1,4 @@
-function SearchResultsController ($stateParams, basketService, searchResponse) {
+function SearchResultsController ($stateParams, basketService, productAttributes, searchResponse) {
 	var vm = this;
 
 	vm.query = $stateParams.query;
@@ -6,6 +6,8 @@ function SearchResultsController ($stateParams, basketService, searchResponse) {
 	vm.results = searchResponse.results;
 
 	vm.addToBasket = basketService.addToBasket;
+
+	vm.productAttributes = productAttributes;
 }
 
 SearchResultsController.resolve = /* @ngInject */ {

@@ -48,7 +48,7 @@
 	}
 
 	&__more-info {
-		@media (min-width: 45em) {
+		@media (min-width: 34em) {
 			display: flex;
 		}
 
@@ -61,7 +61,7 @@
 		}
 	}
 
-	@media (min-width: 45em) {
+	@media (min-width: 34em) {
 		&__product-details {
 			width: 40%;
 			margin-left: $pad;
