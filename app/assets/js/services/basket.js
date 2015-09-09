@@ -17,7 +17,9 @@ function BasketService ($http, $q, $log, API, universal_variable, browserStorage
 
 	service.getBasket = function() {
 		if (!basket_id || browserStorage.getItem('basket_id')) {
-			return service.createBasket();
+			return $q.reject({
+				message: 'Couldn\'t get basket, no id stored'
+			})
 		}
 
 		return $http({
@@ -30,8 +32,13 @@ function BasketService ($http, $q, $log, API, universal_variable, browserStorage
 			});
 	};
 
-	service
-		.getBasket();
+	(function initBasket () {
+		// No need to check browserStorage  again, it's only just been checked at the top of the file
+		if (basket_id) {
+			return service.getBasket();
+		}
+		return service.createBasket();
+	})();
 
 	return service;
 }
