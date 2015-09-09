@@ -16,10 +16,7 @@ SearchResultsController.resolve = /* @ngInject */ {
 		searchParams.query = $stateParams.query;
 
 		return searchService
-			.getResults(searchParams)
-			.then(function(response) {
-				return response;
-			});
+			.getResults(searchParams);
 	}	
 };
 
