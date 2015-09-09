@@ -1,0 +1,14 @@
+<div class="overlay">
+	<div class="overlay_inner">
+		<h2>DELIVERY CALENDAR</h2>
+
+		<ul>
+			<li ng-repeat="option in vm.deliveryOptions">
+				<h3 ng-bind="option.date"></h3>
+				<span ng-repeat="method in option.methods" ng-bind="method.name"></span>
+			</li>
+		</ul>
+
+		<button ng-click="vm.close()">close</button>
+	</div>
+</div>

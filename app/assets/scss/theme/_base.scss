@@ -139,6 +139,11 @@ ol {
 	list-style-type: decimal
 }
 
+.panel {
+	background: $brand-light;
+	padding: $pad;
+}
+
 // Utility
 .visually-hidden {
 	position: absolute;
