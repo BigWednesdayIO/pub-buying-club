@@ -8,11 +8,19 @@ var gulp = require('gulp'),
 	wiredep = require('wiredep'),
 	connect = require('gulp-connect');
 
+function handleError(err) {
+	console.log(err.toString());
+	this.emit('end');
+}
+
 gulp.task('build:css', function() {
 	return gulp
 		.src('app/assets/scss/*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass())
+		.pipe(
+			sass()
+				.on('error', handleError)
+		)
 		.pipe(autoprefixer({
 			browsers: ['last 3 versions'],
 		}))
