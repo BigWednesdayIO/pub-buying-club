@@ -1,0 +1,32 @@
+.basket {
+	font-size: 1.4rem;
+
+	.product-name,
+	.product-description {
+		margin: 0;
+	}
+
+	.quantity {
+		width: 3.5em;
+	}
+
+	.basket-summary {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.total {
+		display: block;
+		line-height: 1.3;
+	}
+
+	.excluding-vat {
+		font-size: 1.4em;
+	}
+
+	.including-vat {
+		font-size: 1.2em;
+	}
+}
