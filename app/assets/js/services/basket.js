@@ -34,7 +34,9 @@ function BasketService ($http, $q, $log, API, universal_variable, browserStorage
 
 	service.setDelivery = function(chosenDelivery) {
 		// TODO proper API call
-		return chosenDelivery;
+
+		universal_variable.basket.delivery_date = chosenDelivery.date;
+		universal_variable.basket.delivery_method = chosenDelivery.method;
 	}
 
 	service.addToBasket = function(product) {

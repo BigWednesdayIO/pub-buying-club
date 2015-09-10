@@ -6,8 +6,8 @@
 		<div class="panel">
 			<button type="button" class="primary-button" ng-click="vm.chooseDeliveryDate()" style="float: right">Change</button>
 			<ul>
-				<li>Order type: <strong ng-bind="vm.basket.delivery_method || 'not set'"></strong></li>
-				<li>Delivery day: <strong ng-bind="vm.basket.delivery_date || 'not set'"></strong></li>
+				<li>Order type: <strong ng-bind="vm.basket.delivery_method || 'not chosen'"></strong></li>
+				<li>Delivery day: <strong><span ng-bind="vm.basket.delivery_date | date: 'EEE, d MMM'"></span><span ng-hide="vm.basket.delivery_date">not chosen</span></strong></li>
 			</ul>
 		</div>
 

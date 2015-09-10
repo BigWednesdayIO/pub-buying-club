@@ -18,12 +18,12 @@
 	.product-description {
 		margin: 0;
 	}
+}
 
-	.basket-summary {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+.basket-summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
 	.total {
 		display: block;
