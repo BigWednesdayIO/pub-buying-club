@@ -2,11 +2,16 @@
 	padding-bottom: $pad;
 }
 
-.footer-links {
+.footer-links,
+.footer-legal {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: top;
 	justify-content: space-between;
+
+}
+
+.footer-links {
 	margin: 0 $pad*-1;
 
 	> section {
@@ -16,9 +21,6 @@
 }
 
 .footer-legal {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
 	padding: $pad 0;
 
 	a::after {

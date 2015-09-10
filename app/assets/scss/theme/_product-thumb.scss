@@ -1,0 +1,42 @@
+.product-thumb {
+	padding-bottom: $pad-and-half;
+
+	& + & {
+		border-top: 1px solid $border-light;
+		padding-top: $pad-and-half;
+	}
+
+	&__name {
+		color: $link;
+
+		&:hover {
+			color: $link-hover;
+		}
+	}
+
+	&__image {
+		border: 1px solid $link;
+
+		&:hover {
+			border-color: $link-hover;
+		}
+	}
+
+	&__lower {
+		background: $brand-light;
+		border: 1px solid $border-light;
+		border-width: 1px 0;
+		padding: $pad-half;
+	}
+
+	&__more-info {
+		border-bottom: 1px solid $border-light;
+		margin: 0 $pad-half*-1 $pad-half;
+		padding: 0 $pad;
+		font-size: 1.4rem;
+
+		&__heading {
+			font-size: 1.6rem;
+		}
+	}
+}

@@ -1,13 +1,7 @@
 .basket {
 	td {
-		padding: $pad-half 0;
-
 		&:not(:first-child) {
 			vertical-align: top;
-		}
-
-		&:last-child {
-			text-align: right;
 		}
 	}
 

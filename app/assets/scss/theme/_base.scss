@@ -21,18 +21,32 @@ h1 {
 	margin-top: 0;
 }
 
+.header-link {
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+
+	&:hover {
+		color: inherit;
+		text-decoration: underline;
+	}
+}
+
 
 // Forms
 .error {
 	color: $error;
 }
 
-a {
-	color: $brand-mid;
+a,
+.text-only-button {
+	color: $link;
 	text-decoration: none;
 
 	&:hover {
-		color: $brand-dark;
+		color: $link-hover;
 		text-decoration: underline;
 	}
 }
@@ -96,10 +110,10 @@ button {
 	border: 0 none;
 	background: transparent;
 	cursor: pointer;
+}
 
-	&:hover {
-		text-decoration: underline;
-	}
+.quantity {
+	width: 3.5em;
 }
 
 // lists

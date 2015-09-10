@@ -1,4 +1,4 @@
-function SearchBarDirective () {
+function SearchBarDirective ($state) {
 	return {
 		restrict: 'EA',
 		scope: {},
@@ -12,7 +12,9 @@ function SearchBarDirective () {
 					return false;
 				}
 
-				// TODO actually perform the search here
+				$state.go('search-results', {
+					query: vm.query
+				});
 			};
 		},
 		controllerAs: 'vm',
