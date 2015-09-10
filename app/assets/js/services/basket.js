@@ -32,6 +32,11 @@ function BasketService ($http, $q, $log, API, universal_variable, browserStorage
 			});
 	};
 
+	service.setDelivery = function(chosenDelivery) {
+		// TODO proper API call
+		return chosenDelivery;
+	}
+
 	service.addToBasket = function(product) {
 		// TODO proper API call
 

@@ -1,14 +1,31 @@
-<div class="overlay">
-	<div class="overlay_inner">
+<div class="modal">
+	<div class="inner">
+		<button ng-click="vm.close()" class="text-only-button" style="float: right;">[&times;]</button>
 		<h2>DELIVERY CALENDAR</h2>
 
-		<ul>
-			<li ng-repeat="option in vm.deliveryOptions">
-				<h3 ng-bind="option.date"></h3>
-				<span ng-repeat="method in option.methods" ng-bind="method.name"></span>
-			</li>
-		</ul>
+		<h3>
+			<button ng-click="vm.currentPage = vm.currentPage - 1" ng-disabled="vm.currentPage <= 0">&lt;&lt;</button>
+			<span ng-bind="vm.visibleWeek[0] | date: 'EEE, d MMM'"></span> - <span ng-bind="vm.visibleWeek[6] | date: 'EEE, d MMM'"></span>
+			<button ng-click="vm.currentPage = vm.currentPage + 1" ng-disabled="vm.currentPage >= vm.numberOfPages">&gt;&gt;</button>
+		</h3>
 
-		<button ng-click="vm.close()">close</button>
+		<table>
+			<tbody>
+				<tr ng-repeat="day in vm.visibleWeek = (vm.weekView | basicPaging:vm.pageSize:vm.currentPage)">
+					<th scope="row" ng-bind="::day | date: 'EEE, d MMM'"></th>
+					<td>
+						<ul>
+							<li ng-repeat="method in ::vm.deliveryOptions[day]">
+								<input type="radio" name="delivery-method" id="{{::day}}-{{::method.name}}" value="{{::day}}-{{::method.name}}" ng-model="vm.deliveryMethodCode" ng-change="vm.selectDeliveryMethod({date: day, method: method.name})" />
+								<label for="{{::day}}-{{::method.name}}">
+									<strong ng-bind="::method.display_name"></strong>
+									<span ng-bind="::method.charge | currency: '£'"></span>
+								</label>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

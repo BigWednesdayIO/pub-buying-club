@@ -19,7 +19,9 @@ function BasketController ($scope, basketService, deliveryDatesService, universa
 
 	vm.show = 'summary';
 	vm.chooseDeliveryDate = function() {
-		deliveryDatesService.requestDeliveryMethodFromUser();
+		deliveryDatesService
+			.requestDeliveryMethodFromUser()
+			.then(basketService.setDelivery);
 	}
 }
 
