@@ -15,12 +15,13 @@ function BasketController ($scope, basketService, deliveryDatesService, universa
 		return universal_variable.basket;
 	}, function(basket) {
 		vm.basket = basket;
+		vm.deliveryIsSet = basketService.deliveryIsSet();
 	});
 
-	vm.show = 'summary';
+	vm.show = 'detail';
 	vm.chooseDeliveryDate = function() {
 		deliveryDatesService
-			.requestDeliveryMethodFromUser()
+			.getDeliveryMethodFromUser()
 			.then(basketService.setDelivery);
 	};
 }

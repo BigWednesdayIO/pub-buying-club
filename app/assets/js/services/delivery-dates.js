@@ -15,7 +15,7 @@ function DeliveryDatesService ($http, $filter, $q, ModalService, API, _) {
 			});
 	};
 
-	service.requestDeliveryMethodFromUser = function() {
+	service.getDeliveryMethodFromUser = function() {
 		var deferred = $q.defer();
 
 		// show overlay
@@ -42,6 +42,18 @@ function DeliveryDatesService ($http, $filter, $q, ModalService, API, _) {
 
 		return deferred.promise;
 	};
+
+	service.chooseAnotherDate = function() {
+		var deferred = $q.defer();
+
+		if (prompt('The product you are trying to add to the basket is unavailable for your chosen delivery, choose another one?')) {
+			deferred.resolve(service.getDeliveryMethodFromUser());
+		} else {
+			deferred.reject();
+		}
+
+		return deferred.promise;
+	}
 
 	service.generateWeekView = function(weeks) {
 		var today = (new Date()),
