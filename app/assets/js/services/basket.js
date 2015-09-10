@@ -40,8 +40,8 @@ function BasketService ($http, $q, $log, API, universal_variable, browserStorage
 			quantity: 1,
 			subtotal: product.unit_price,
 			total_discount: 0
-		})
-	}
+		});
+	};
 
 	(function initBasket () {
 		// No need to check browserStorage  again, it's only just been checked at the top of the file
