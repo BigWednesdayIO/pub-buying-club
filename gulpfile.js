@@ -17,10 +17,7 @@ gulp.task('build:css', function() {
 	return gulp
 		.src('app/assets/scss/*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(
-			sass()
-				.on('error', handleError)
-		)
+		.pipe(sass().on('error', handleError))
 		.pipe(autoprefixer({
 			browsers: ['last 3 versions'],
 		}))
@@ -40,7 +37,7 @@ gulp.task('build:js', function() {
 		.pipe(concat('app.js'))
 		.pipe(ngAnnotate({
 			single_quotes: true
-		}))
+		}).on('error', handleError))
 		.pipe(gulp.dest('app/assets/js'))
 		.pipe(connect.reload());
 });
