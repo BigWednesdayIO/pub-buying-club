@@ -2,28 +2,13 @@ describe('basic authentication interceptor', function() {
 	var $rootScope,
 		$q,
 		BasicValidationInterceptor,
-		deferred,
-		response;
+		responseData,
+		errorOccurred;
 
 	function jsonHeaders () {
 		return {
 			'content-type': 'application/json'
 		};
-	}
-
-	function responseHandler () {
-		this.success = function() {};
-	}
-
-	function setupResponsePromise () {
-		deferred = $q.defer();
-		response = new responseHandler();
-
-		spyOn(response, 'success');
-
-		deferred
-			.promise
-			.then(response.success);
 	}
 
 	beforeEach(module('app'));
@@ -41,66 +26,111 @@ describe('basic authentication interceptor', function() {
 	});
 
 	describe('a json response response', function() {
-		beforeEach(setupResponsePromise);
-
-		it('accepts an array', function() {
-			deferred
-				.resolve(BasicValidationInterceptor.response({
-					headers: jsonHeaders,
-					data: [
-						'foo',
-						'bar'
-					]
-				}));
-
-			$rootScope.$digest();
-				
-			expect(response.success).toHaveBeenCalled();
+		beforeEach(function() {
+			responseData = null;
 		});
 
-		it('accepts an object', function() {
-			deferred
-				.resolve(BasicValidationInterceptor.response({
+		it('accepts an array', function() {
+			var data = [
+				'foo',
+				'bar'
+			];
+
+			BasicValidationInterceptor
+				.response({
 					headers: jsonHeaders,
-					data: {
-						foo: 'bar'
-					}
-				}));
+					data: data
+				})
+				.then(function(_responseData_) {
+					responseData = _responseData_;
+				});
 
 			$rootScope.$apply();
 				
-			expect(response.success).toHaveBeenCalled();
+			expect(responseData).toEqual(data);
+		});
+
+		it('accepts an object', function() {
+			var data = {
+				foo: 'bar'
+			};
+
+			BasicValidationInterceptor
+				.response({
+					headers: jsonHeaders,
+					data: data
+				})
+				.then(function(_responseData_) {
+					responseData = _responseData_;
+				});
+
+			$rootScope.$apply();
+				
+			expect(responseData).toEqual(data);
 		});
 
 		describe('with an empty response body', function() {
-			beforeEach(setupResponsePromise);
+			beforeEach(function() {
+				errorOccurred = false;
+			});
 
 			it('accepts a 204', function() {
-				deferred
-					.resolve(BasicValidationInterceptor.response({
+				BasicValidationInterceptor
+					.response({
 						headers: jsonHeaders,
 						status: 204
-					}));
+					})
+					.catch(function() {
+						errorOccurred = true;
+					});
 
-				$rootScope.$digest();
+				$rootScope.$apply();
 
-				expect(response.success).toHaveBeenCalled();
+				expect(errorOccurred).toBe(false);
 			});
 
 			it('rejects non-204 responses', function() {
-				deferred
-					.resolve(BasicValidationInterceptor.response({
+				BasicValidationInterceptor
+					.response({
 						headers: jsonHeaders,
 						config: {
 							url: 'http://foo.bar'
 						},
 						status: 200
-					}));
+					})
+					.catch(function() {
+						errorOccurred = true;
+					});
 
-				$rootScope.$digest();
+				$rootScope.$apply();
 
-				expect(response.success).not.toHaveBeenCalled();
+				expect(errorOccurred).toBe(true);
 			});
+		});
+	});
+
+	describe('a response without a content-type header', function() {
+		beforeEach(function() {
+			responseData = null;
+		});
+
+		it ('doens\'t get changed', function() {
+			var nonJsonResponse = {
+				headers: function() {
+					return {};
+				},
+				data: 'foo'
+			};
+
+			BasicValidationInterceptor
+				.response(nonJsonResponse)
+				.then(function(_responseData_) {
+					responseData = _responseData_;
+				});
+
+			$rootScope.$apply();
+
+			expect(responseData).toEqual(nonJsonResponse);
 		});
 	});
 });
