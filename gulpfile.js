@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 	wiredep = require('wiredep'),
 	connect = require('gulp-connect');
 
-function handleError(err) {
+function handleError (err) {
 	console.log(err.toString());
 	this.emit('end');
 }
