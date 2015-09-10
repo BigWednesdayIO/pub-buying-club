@@ -22,7 +22,7 @@ function BasketController ($scope, basketService, deliveryDatesService, universa
 		deliveryDatesService
 			.requestDeliveryMethodFromUser()
 			.then(basketService.setDelivery);
-	}
+	};
 }
 
 angular

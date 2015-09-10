@@ -79,9 +79,15 @@ button {
 	padding: $pad-half;
 	border: 1px solid;
 	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
 
 	&:hover {
 		text-decoration: none;
+	}
+
+	&:disabled {
+		cursor: initial;
 	}
 }
 
@@ -93,15 +99,24 @@ button {
 	&:hover {
 		color: $ui-primary-text;
 	}
+
+	&:disabled {
+		background: $ui-primary-bg-disabled;
+		border-color: $ui-primary-bg-disabled;
+		color: $ui-primary-text-disabled;
+	}
 }
 
 .secondary-button {
 	background: $ui-secondary-bg;
 	color: $ui-secondary-text;
-	border-color: 1px solid $ui-secondary-text;
 
 	&:hover {
 		color: $ui-secondary-text;
+	}
+
+	&:disabled {
+		color: $border-light;
 	}
 }
 

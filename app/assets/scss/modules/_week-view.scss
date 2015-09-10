@@ -1,0 +1,34 @@
+.week-view {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		margin: 0;
+		padding: $pad-half;
+	}
+
+	&__change-week {
+		width: 20%;
+		min-width: 4.5rem;
+		align-self: stretch;
+	}
+
+	&__date,
+	&__option,
+	&__not-available {
+		padding: $pad-half;
+	}
+
+	&__date {
+		width: 40%;
+		text-align: left;
+	}
+
+	&__option {
+		display: block;
+		cursor: pointer;
+	}
+}

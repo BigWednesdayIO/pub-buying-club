@@ -16,7 +16,7 @@ function DeliveryDatesService ($http, $filter, $q, ModalService, API, _) {
 	};
 
 	service.requestDeliveryMethodFromUser = function() {
-		var deferred = $q.defer;
+		var deferred = $q.defer();
 
 		// show overlay
 		service.getDates()

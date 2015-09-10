@@ -18,6 +18,8 @@ $link-hover: $brand-dark;
 
 $ui-primary-bg: $brand-dark;
 $ui-primary-text: white;
+$ui-primary-bg-disabled: mix(gray, $ui-primary-bg, 50%);
+$ui-primary-text-disabled: mix(gray, $ui-primary-text, 25%);
 
 $ui-secondary-bg: white;
 $ui-secondary-text: $brand-mid;

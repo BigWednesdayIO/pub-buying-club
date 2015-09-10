@@ -1,0 +1,34 @@
+.multi-select {
+	&__option {
+		& + & {
+			border-top: 1px solid $border-light;
+		}
+	}
+
+	&__input {
+		@extend .visually-hidden;
+	}
+
+	&__label {
+		display: block;
+		padding: $pad-half;
+		background: $body-bg;
+		color: $link;
+		transition: background $transition;
+		cursor: pointer;
+
+		&:hover {
+			background: $highlight-color;
+		}
+	}
+
+	&__input:checked + &__label {
+		background: $ui-primary-bg;
+		color: $ui-primary-text;
+
+		&::after {
+			content: '✓';
+			float: right;
+		}
+	}
+}

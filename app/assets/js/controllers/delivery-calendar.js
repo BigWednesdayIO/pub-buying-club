@@ -1,14 +1,21 @@
-function DeliveryCalendarController ($controller, deliveryDatesService, deliveryOptions, close) {
-	var vm = this;
+function DeliveryCalendarController ($controller, deliveryDatesService, deliveryTypes, deliveryOptions, close) {
+	var vm = this,
+		numberOfWeeks;
 
 	vm.close = close;
 	vm.deliveryOptions = deliveryOptions;
+	vm.deliveryTypes = deliveryTypes;
 
+	vm.selectedDelivery;
 	vm.selectDeliveryMethod = function(selectedDelivery) {
-		close(selectedDelivery);
+		vm.selectedDelivery = selectedDelivery;
 	};
 
-	var numberOfWeeks = 6;
+	vm.startShopping = function() {
+		close(vm.selectedDelivery);
+	};
+
+	numberOfWeeks = 6;
 	vm.weekView = deliveryDatesService.generateWeekView(numberOfWeeks);
 	vm.pageSize = 7;
 	vm.currentPage = 0;
