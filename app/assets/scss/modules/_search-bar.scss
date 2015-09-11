@@ -1,6 +1,7 @@
 .search-bar {
 	display: flex;
-	padding: $pad 0;
+	padding-top: $pad;
+	padding-bottom: $pad;
 
 	input {
 		width: 75%;

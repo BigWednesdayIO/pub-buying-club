@@ -1,10 +1,11 @@
 .content-wrap {
 	position: relative;
-	margin: 0 $pad;
+	padding: 0 $pad;
+	margin: 0 auto;
+	max-width: 120rem;
 
-	@media (min-width: 75em) {
-		margin: 0 auto;
-		max-width: 1168px;
+	&--narrow {
+		max-width: 70rem;
 	}
 }
 

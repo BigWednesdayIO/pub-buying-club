@@ -73,6 +73,31 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 						templateUrl: 'views/search-results.html'
 					}
 				}
+			})
+
+		.state('checkout', {
+			views: {
+				'header@': {
+					templateUrl: 'views/partials/header--checkout.html'
+				},
+				'@': {
+					templateUrl: 'views/layouts/narrow.html'
+				},
+				'footer@': {
+					templateUrl: 'views/partials/footer--checkout.html'
+				}
+			}
+		})
+			.state('basket-confirmation', {
+				parent: 'checkout',
+				url: '/checkout/',
+				views: {
+					'main@checkout': {
+						templateUrl: 'views/checkout-basket.html',
+						controller: 'BasketController as vm',
+						resolve: BasketController.resolve
+					}
+				}
 			});
 
 	$urlRouterProvider.otherwise("/login");
