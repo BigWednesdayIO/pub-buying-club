@@ -1,4 +1,4 @@
-function BasketController ($scope, basketService, universal_variable, debounceOptions) {
+function BasketController ($scope, basketService, deliveryDatesService, universal_variable, debounceOptions) {
 	var vm = this;
 
 	vm.debounceOptions = debounceOptions;
@@ -15,7 +15,15 @@ function BasketController ($scope, basketService, universal_variable, debounceOp
 		return universal_variable.basket;
 	}, function(basket) {
 		vm.basket = basket;
+		vm.deliveryIsSet = basketService.deliveryIsSet();
 	});
+
+	vm.show = 'detail';
+	vm.chooseDeliveryDate = function() {
+		deliveryDatesService
+			.getDeliveryMethodFromUser()
+			.then(basketService.setDelivery);
+	};
 }
 
 angular

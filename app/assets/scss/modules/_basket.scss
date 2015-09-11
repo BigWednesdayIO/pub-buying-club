@@ -18,12 +18,12 @@
 	.product-description {
 		margin: 0;
 	}
+}
 
-	.basket-summary {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+.basket-summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
 	.total {
 		display: block;
@@ -37,4 +37,10 @@
 	.including-vat {
 		font-size: 1.2em;
 	}
+}
+
+.start-shopping {
+	width: 100%;
+	padding-top: $pad;
+	padding-bottom: $pad;
 }

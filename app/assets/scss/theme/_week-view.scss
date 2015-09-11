@@ -1,0 +1,55 @@
+.week-view {
+	&__header {
+		background: $body-bg;
+		border: 1px solid $border-light;
+	}
+
+	&__title {
+		text-transform: none;
+	}
+
+	&__change-week {
+		margin: -1px 0;
+	}
+
+	&__day {
+		background: $body-bg;
+		transition: background $transition, color $transition;
+
+		&:hover {
+			background: $highlight-color;
+		}
+
+		&.is-selected {
+			background: $ui-primary-bg;
+			color: $ui-primary-text;
+		}
+	}
+
+	&__date,
+	&__availability {
+		border-bottom: 1px solid $border-light;
+	}
+
+	&__date {
+		border-right: 1px solid $border-light;
+	}
+
+	&__option {
+		color: $link;
+		font-weight: bold;
+
+		&:hover {
+			color: $link-hover;
+		}
+
+		input:checked + & {
+			color: inherit;
+
+			&::after {
+				content: '✓';
+				float: right;
+			}
+		}
+	}
+}

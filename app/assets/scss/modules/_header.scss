@@ -23,10 +23,10 @@
 	@media (min-width: 34em) {
 		position: static;
 		padding: $pad 0;
-		margin: 0;
 
 		&__inner {
 			display: block;
+			margin: 0;
 		}
 	}
 

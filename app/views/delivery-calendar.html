@@ -1,0 +1,53 @@
+<div class="modal is-narrow">
+	<div class="inner delivery-calendar">
+		<h3>Choose your delivery type:</h3>
+
+		<ul class="multi-select">
+			<li class="multi-select__option" ng-repeat="(type, display_name) in ::vm.deliveryTypes">
+				<input class="multi-select__input" type="radio" name="delivery-type" id="{{::type}}-delivery" ng-model="vm.selectedType" value="{{::type}}" ng-change="vm.deliveryMethodCode = null" />
+				<label class="multi-select__label" for="{{::type}}-delivery" ng-bind="::display_name"></label>
+			</li>
+		</ul>
+
+		<div ng-show="vm.selectedType">
+			<h3>Choose your delivery day:</h3>
+
+			<table class="week-view">
+				<thead>
+					<tr>
+						<td colspan="2">
+							<div class="week-view__header">
+								<button class="secondary-button week-view__change-week" ng-click="vm.currentPage = vm.currentPage - 1" ng-disabled="vm.currentPage <= 0">〈</button>
+								<h3 class="week-view__title">w/c <span ng-bind="vm.visibleWeek[0] | date: 'd MMM'"></span></h3>
+								<button class="secondary-button week-view__change-week" ng-click="vm.currentPage = vm.currentPage + 1" ng-disabled="vm.currentPage >= vm.numberOfPages">〉</button>
+							</div>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="week-view__day" ng-repeat="day in vm.visibleWeek = (vm.weekView | basicPaging:vm.pageSize:vm.currentPage)" ng-class="{'is-selected': vm.deliveryMethodCode.match(day)}">
+						<th class="week-view__date" scope="row" ng-bind="::day | date: 'EEE, d MMM'"></th>
+						<td class="week-view__availability">
+							<ul>
+								<li ng-repeat="method in deliveryOptionsFiltered = (vm.deliveryOptions[day] | filter:{type: vm.selectedType}:true)">
+									<input class="visually-hidden" type="radio" name="delivery-method" id="{{::day}}-{{::method.name}}" value="{{::day}}-{{::method.name}}" ng-model="vm.deliveryMethodCode" ng-change="vm.selectDeliveryMethod({date: day, method: method.name})" />
+									<label class="week-view__option" for="{{::day}}-{{::method.name}}">
+										<span ng-show="::method.charge" ng-bind="::method.charge | currency: '£'"></span>
+										<span ng-hide="::method.charge">FREE</span>
+									</label>
+								</li>
+								<li class="week-view__not-available" ng-show="!deliveryOptionsFiltered.length">
+									Not available
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="form-row with-cta">
+				<button class="primary-button" ng-click="vm.startShopping()" ng-disabled="!vm.deliveryMethodCode">Start shopping</button>
+			</div>
+		</div>
+	</div>
+</div>

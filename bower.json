@@ -16,6 +16,8 @@
   "dependencies": {
     "angular": "~1.4.4",
     "angular-mocks": "~1.4.4",
-    "angular-ui-router": "ui-router#~0.2.15"
+    "angular-modal-service": "~0.6.7",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "lodash": "~3.10.1"
   }
 }
