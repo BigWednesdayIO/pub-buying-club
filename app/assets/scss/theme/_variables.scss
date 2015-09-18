@@ -1,5 +1,5 @@
 // Brand
-$brand-dark: #005030; // racing green
+$brand-dark: #55a32a; // racing green
 $brand-mid: #97662a; // gold
 $brand-light: #f9f7f3; // beige
 
@@ -7,8 +7,7 @@ $brand-light: #f9f7f3; // beige
 $error: red;
 $modal-background: $brand-light;
 $shadow: rgba(0, 0, 0, .7);
-$border-color: $brand-mid;
-$border-light: #e0d1bf;
+$border: #e0d1bf;
 $highlight-color: rgba(0, 100, 0, .1);
 $body-text: black;
 $body-bg: white;
@@ -16,24 +15,72 @@ $body-bg: white;
 $link: $brand-mid;
 $link-hover: $brand-dark;
 
-$ui-primary-bg: $brand-dark;
+
+
+
+
+
+
+$brand: #55a32a;
+
+$black: #222;
+$light-grey-one: #fafafa;
+$light-grey-two: #f5f5f5;
+$light-grey-three: #f1f1f1;
+
+$nav: #444;
+$nav-hover: $black;
+
+$link: $nav;
+$link-hover: $brand;
+
+$body-text: rgb(110,110,122);
+$body-heading: #606060;
+$body-bg: white;
+
+$font-primary: Roboto, sans-serif;
+$font-secondary: 'Open Sans', sans;
+
+$body-font: $font-secondary;
+
+$border-color: #eee;
+$border-strong-color: #e0e0e0;
+
+$gradient: linear-gradient(to bottom, $light-grey-one, $light-grey-two);
+$border: 1px solid $border-color;
+$border-strong: 1px solid $border-strong-color;
+$shadow: 0 1px 2px rgba(0, 0, 0, .08);
+$section-shadow: 0 3px 1px -2px rgba(0, 0, 0, .14), 0 2px 2px 0 rgba(0, 0, 0, .098), 0 1px 5px 0 rgba(0, 0, 0, .084);
+
+// UI Elements
+$ui-primary: $brand;
 $ui-primary-text: white;
-$ui-primary-bg-disabled: mix(gray, $ui-primary-bg, 50%);
+$ui-primary-border: 1px solid transparent;
+$ui-primary-disabled: mix(gray, $ui-primary, 50%);
 $ui-primary-text-disabled: mix(gray, $ui-primary-text, 25%);
+$ui-secondary: #FCFCFC;
+$ui-secondary-text: $nav;
+$ui-secondary-border-color: #DBDBDB;
+$ui-secondary-border: 1px solid $ui-secondary-border-color;
 
-$ui-secondary-bg: white;
-$ui-secondary-text: $brand-mid;
+$darken-top: (lightness($light-grey-two) - lightness(#FCFCFC)) * -1;
+$darken-bottom: (lightness($light-grey-three) - lightness(#FCFCFC)) * -1;
 
-// Variables
+$ui-primary-highlight: linear-gradient(to bottom, darken($ui-primary, $darken-top), darken($ui-primary, $darken-bottom));
+$ui-secondary-highlight: linear-gradient(to bottom, darken($ui-secondary, $darken-top), darken($ui-secondary, $darken-bottom));
+$ui-secondary-highlight-border-color: #e1e1e1;
+
+// Padding
 $pad: 1em;
 $pad-half: $pad/2;
-$pad-and-half: $pad*1.5;
 $pad-double: $pad*2;
-
-// Fonts
-$body-font: Helvetica, Arial, Sans;
+$pad-and-half: $pad*1.5;
 
 // Transitions
 $transition-fast: .15s;
 $transition-slow: .3s;
 $transition: $transition-fast; // default
+
+// Breakpoints
+$bp-medium: 48em; // 768px
+

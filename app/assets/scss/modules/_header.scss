@@ -37,6 +37,22 @@
 			padding-top: 0;
 		}
 	}
+
+	&--checkout {
+		display: flex;
+		align-items: center;
+		padding: $pad-half 0;
+		margin-bottom: $pad-half;
+
+		.logo {
+			display: block;
+			margin-right: $pad-half;
+		}
+
+		.title {
+			margin: 0;
+		}
+	}
 }
 
 .user-status,

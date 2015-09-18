@@ -1,7 +1,7 @@
 .week-view {
 	&__header {
 		background: $body-bg;
-		border: 1px solid $border-light;
+		border: 1px solid $border;
 	}
 
 	&__title {
@@ -21,18 +21,18 @@
 		}
 
 		&.is-selected {
-			background: $ui-primary-bg;
+			background: $ui-primary;
 			color: $ui-primary-text;
 		}
 	}
 
 	&__date,
 	&__availability {
-		border-bottom: 1px solid $border-light;
+		border-bottom: 1px solid $border;
 	}
 
 	&__date {
-		border-right: 1px solid $border-light;
+		border-right: 1px solid $border;
 	}
 
 	&__option {

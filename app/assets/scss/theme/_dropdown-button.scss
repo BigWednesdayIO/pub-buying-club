@@ -4,17 +4,17 @@
 
 	&__button {
 		background: white;
-		border: 1px solid $border-light;
+		border: 1px solid $border;
 		color: $body-text;
 	}
 
 	&__list {
 		background: white;
-		border: 1px solid $border-light;
+		border: 1px solid $border;
 		border-width: 0 1px;
 
 		> li {
-			border-bottom: 1px solid $border-light;
+			border-bottom: 1px solid $border;
 		}
 	}
 }

@@ -6,19 +6,11 @@
 	background: $brand-light;
 
 	@media (min-width: 34em) {
-		border-bottom: 1px solid $border-light;
+		border-bottom: 1px solid $border;
 	}
 
 	@media (min-width: 55em) {
 		border-bottom: 0 none;
-	}
-}
-
-.logo {
-	border-bottom: 1px solid $border-color;
-
-	@media (min-width: 34em) {
-		border: 0 none;
 	}
 }
 
@@ -47,7 +39,7 @@
 	a {
 		color: $body-text;
 		padding: $pad-half;
-		border-bottom: 1px solid $border-light;
+		border-bottom: 1px solid $border;
 
 		@media (min-width: 34em) {
 			padding: 0;
@@ -67,14 +59,14 @@
 	a {
 		text-transform: uppercase;
 		text-decoration: none;
-		background: $ui-primary-bg;
+		background: $ui-primary;
 		color: $ui-primary-text;
 		border-radius: 3px;
 	}
 
 	@media (min-width: 55em) {
 		background: $brand-light;
-		border-bottom: 1px solid $border-light;
+		border-bottom: 1px solid $border;
 		text-align: center;
 		line-height: 2;
 
@@ -92,15 +84,15 @@
 			color: $brand-mid;
 
 			&:hover {
-				background: $ui-primary-bg;
+				background: $ui-primary;
 				color: $ui-primary-text;
-				border-color: $border-light;
+				border-color: $border;
 			}
 
 			&.active {
 				background: white;
 				color: $body-text;
-				border-color: $border-light;
+				border-color: $border;
 				box-shadow: 0 1px 0 0 white;
 			}
 		}
