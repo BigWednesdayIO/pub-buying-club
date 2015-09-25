@@ -1,46 +1,57 @@
 .primary-navigation {
-	a {
-		display: block;
-	}
-
-	@media (min-width: 34em) {
-		position: static;
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: $pad;
-
-		a {
-			display: inline-block;
-
-			+ a {
-				margin-left: $pad;
-			}
-		}
-	}
-}
-
-.secondary-navigation {
-	&:empty {
-		display: none;
-	}
-
-	padding: 0 $pad-half;
-
-	&__inner {
-		display: flex;
-		flex-flow: row wrap;
-	}
+	display: flex;
+	margin-left: $pad;
 
 	a {
-		padding: $pad-half 0;
+		white-space: nowrap;
 	}
 
 	a + a {
 		margin-left: $pad;
 	}
+}
 
-	@media (min-width: 55em) {
-		flex-flow: row nowrap;
-		padding: 0;
+.secondary-navigation {
+	margin-bottom: $pad;
+
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height .25s ease-out;
+
+	.show-menu & {
+		max-height: 100vh;
+		transition: max-height .25s ease-in;
+	}
+
+	@media (min-width: $bp-medium) {
+		max-height: none;
+		transition: none;
+	}
+
+	&:empty {
+		display: none;
+	}
+
+	a {
+		display: block;
+		padding: $pad-half 0;
+
+		@media (min-width: $bp-medium) {
+			+ a {
+				margin-left: $pad;
+			}
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-flow: column wrap;
+		padding-top: $pad-half;
+		padding-bottom: $pad-half;
+
+		@media (min-width: $bp-medium) {
+			flex-flow: row nowrap;
+			border-bottom: $border;
+		}
 	}
 }

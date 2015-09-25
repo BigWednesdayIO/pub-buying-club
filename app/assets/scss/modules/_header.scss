@@ -1,10 +1,15 @@
 .site-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 99;
-	transition: transform $transition;
+	padding: $pad 0;
+
+	.logo {
+		display: block;
+		flex-shrink: 1;
+
+		> img {
+			display: block;
+			max-width: 100%;
+		}
+	}
 
 	.show-search & {
 		transform: translateY(70px) translateZ(0);
@@ -16,26 +21,9 @@
 
 	&__inner {
 		display: flex;
-		align-items: stretch;
-		margin: 0 $pad*-1;
-	}
-
-	@media (min-width: 34em) {
-		position: static;
-		padding: $pad 0;
-
-		&__inner {
-			display: block;
-			margin: 0;
-		}
-	}
-
-	+ .placeholder {
-		padding-top: 60px;
-
-		@media (min-width: 34em) {
-			padding-top: 0;
-		}
+		flex-flow: row nowrap;
+		align-items: center;
+		margin: 0;
 	}
 
 	&--checkout {
@@ -56,8 +44,9 @@
 }
 
 .user-status,
-.mobile-search,
-.primary-navigation {
+.mobile-search {
+	display: none !important;
+
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -106,11 +95,12 @@
 	z-index: 100;
 }
 
-.header-buttons {
-	flex-grow: 1;
-	z-index: 100;
+.nav-bar {
+	text-align: right;
+	padding: $pad-half $pad;
+	border-bottom: $border;
 
-	@media (min-width: 34em) {
+	@media (min-width: $bp-medium) {
 		display: none;
 	}
 }

@@ -17,7 +17,7 @@
 
 		<base href="/" />
 	</head>
-	<body>
+	<body ng-class="{'show-menu': showMenu}">
 		<header ui-view="header"></header>
 		<div ui-view="secondary-navigation"></div>
 		<div class="the-middle" ui-view></div>
