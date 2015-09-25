@@ -1,7 +1,7 @@
 .multi-select {
 	&__option {
 		& + & {
-			border-top: 1px solid $border;
+			border-top: $border;
 		}
 	}
 

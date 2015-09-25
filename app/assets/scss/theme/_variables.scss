@@ -1,20 +1,11 @@
 // Brand
 $brand-dark: #55a32a; // racing green
 $brand-mid: #97662a; // gold
-$brand-light: #f9f7f3; // beige
 
 // Colors
 $error: red;
-$modal-background: $brand-light;
 $shadow: rgba(0, 0, 0, .7);
-$border: #e0d1bf;
 $highlight-color: rgba(0, 100, 0, .1);
-$body-text: black;
-$body-bg: white;
-
-$link: $brand-mid;
-$link-hover: $brand-dark;
-
 
 
 
@@ -69,6 +60,9 @@ $darken-bottom: (lightness($light-grey-three) - lightness(#FCFCFC)) * -1;
 $ui-primary-highlight: linear-gradient(to bottom, darken($ui-primary, $darken-top), darken($ui-primary, $darken-bottom));
 $ui-secondary-highlight: linear-gradient(to bottom, darken($ui-secondary, $darken-top), darken($ui-secondary, $darken-bottom));
 $ui-secondary-highlight-border-color: #e1e1e1;
+
+$modal: $body-bg;
+$modal-bg: rgba(0, 0, 0, .7);
 
 // Padding
 $pad: 1em;

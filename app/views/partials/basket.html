@@ -2,10 +2,12 @@
 	<div ng-hide="vm.deliveryIsSet">
 		<button class="button--primary large-button start-shopping" ng-click="vm.chooseDeliveryDate()">Start shopping</button>
 	</div>
-	<div ng-show="vm.deliveryIsSet">
-		<button ng-click="vm.show = 'detail'">Order detail</button>
-		<button ng-click="vm.show = 'summary'">Order Summary</button>
-		<div class="order-summary" ng-show="vm.show === 'summary'">
+	<div ng-show="vm.deliveryIsSet" class="tabset">
+		<div class="tabset__head">
+			<button ng-click="vm.show = 'detail'" class="button--secondary tabset__button">Order detail</button>
+			<button ng-click="vm.show = 'summary'" class="button--secondary tabset__button">Order Summary</button>
+		</div>
+		<div class="order-summary tabset__tab" ng-show="vm.show === 'summary'">
 			<h3>Order type &amp; delivery</h3>
 			<div class="panel">
 				<button type="button" class="button--primary" ng-click="vm.chooseDeliveryDate()" style="float: right">Change</button>
@@ -24,7 +26,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="basket" ng-show="vm.show === 'detail'" ng-include="'/views/partials/basket-table.html'"></div>
+		<div class="basket tabset__tab" ng-show="vm.show === 'detail'" ng-include="'/views/partials/basket-table.html'"></div>
 
 		<div class="basket-summary">
 			<p class="totals">

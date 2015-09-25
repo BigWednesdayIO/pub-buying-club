@@ -1,0 +1,46 @@
+.primary-navigation {
+	a {
+		display: block;
+	}
+
+	@media (min-width: 34em) {
+		position: static;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: $pad;
+
+		a {
+			display: inline-block;
+
+			+ a {
+				margin-left: $pad;
+			}
+		}
+	}
+}
+
+.secondary-navigation {
+	&:empty {
+		display: none;
+	}
+
+	padding: 0 $pad-half;
+
+	&__inner {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	a {
+		padding: $pad-half 0;
+	}
+
+	a + a {
+		margin-left: $pad;
+	}
+
+	@media (min-width: 55em) {
+		flex-flow: row nowrap;
+		padding: 0;
+	}
+}

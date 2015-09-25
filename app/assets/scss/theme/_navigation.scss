@@ -1,0 +1,40 @@
+.primary-navigation {
+	background: $body-bg;
+	border-bottom: $border-strong;
+
+	@media (min-width: 34em) {
+		background: transparent;
+		border: 0 none;
+	}
+
+	@media (min-width: 40em) {
+		font-size: 18px;
+	}
+
+	a {
+		color: $nav;
+		padding: $pad-half;
+		border-bottom: $border;
+
+		@media (min-width: 34em) {
+			padding: 0;
+			border: 0 none;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.secondary-navigation {
+	font-size: 1.4rem;
+	border-bottom: $border;
+	margin-bottom: $pad;
+
+	a {
+		&.active {
+			font-weight: 600;
+		}
+	}
+}

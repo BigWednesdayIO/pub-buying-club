@@ -1,5 +1,5 @@
-<form name="vm.searchForm" class="search-bar" ng-submit="vm.performSearch($event)">
+<form name="vm.searchForm" class="search-bar form-row with-postfix" ng-submit="vm.performSearch($event)">
 	<label for="search" class="visually-hidden">Search</label>
 	<input type="search" id="search" ng-model="vm.query" />
-	<button type="submit">Search</button>
+	<button type="submit" class="button--primary postfix">Search</button>
 </form>

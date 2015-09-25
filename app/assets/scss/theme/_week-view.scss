@@ -1,7 +1,7 @@
 .week-view {
 	&__header {
 		background: $body-bg;
-		border: 1px solid $border;
+		border: $border;
 	}
 
 	&__title {
@@ -28,11 +28,11 @@
 
 	&__date,
 	&__availability {
-		border-bottom: 1px solid $border;
+		border-bottom: $border;
 	}
 
 	&__date {
-		border-right: 1px solid $border;
+		border-right: $border;
 	}
 
 	&__option {

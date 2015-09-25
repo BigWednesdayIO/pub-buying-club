@@ -1,9 +1,9 @@
 .modal {
-	background: $shadow;
+	background: $modal-bg;
 
 	.inner {
-		border: 1px solid $border-color;
-		border-radius: $pad;
-		background: $modal-background;
+		border: $border;
+		background: $modal;
+		box-shadow: $section-shadow;
 	}
 }

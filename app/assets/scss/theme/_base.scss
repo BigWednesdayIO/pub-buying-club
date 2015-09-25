@@ -5,14 +5,11 @@ html {
 body {
 	font-size: 1.4em;
 	line-height: 1.6;
-}
-
-body {
 	font-family: $body-font;
 }
 
 // Headings
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-weight: normal;
 	line-height: 1.2;
 }
@@ -66,7 +63,7 @@ button {
 
 input {
 	padding: 0;
-	border: 1px solid $border-color;
+	border: $border-strong;
 	font-size: inherit;
 	line-height: 1em;
 	padding: $pad-half;
@@ -86,7 +83,6 @@ button {
 	font-family: $font-secondary;
 	cursor: pointer;
 	text-transform: uppercase;
-	box-shadow: $section-shadow;
 
 	& + & {
 		margin-left: $pad-half;
