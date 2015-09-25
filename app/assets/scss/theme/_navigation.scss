@@ -16,7 +16,6 @@
 .secondary-navigation {
 	font-size: 1.4rem;
 	background: $gradient;
-	border-bottom: $border;
 
 	a + a {
 		border-top: $border;
@@ -24,8 +23,7 @@
 
 	@media (min-width: $bp-medium) {
 		background: transparent;
-		border: 0 none;
-		box-shadow: none;
+		border-bottom: $border;
 
 		a + a {
 			border: 0 none;

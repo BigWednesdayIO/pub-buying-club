@@ -21,11 +21,13 @@
 	.show-menu & {
 		max-height: 100vh;
 		transition: max-height .25s ease-in;
+		border-bottom: $border;
 	}
 
 	@media (min-width: $bp-medium) {
 		max-height: none;
 		transition: none;
+		overflow: visible;
 	}
 
 	&:empty {
@@ -51,7 +53,6 @@
 
 		@media (min-width: $bp-medium) {
 			flex-flow: row nowrap;
-			border-bottom: $border;
 		}
 	}
 }
