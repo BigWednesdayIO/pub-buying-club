@@ -1,4 +1,4 @@
-function slideAnimation ($q, $timeout) {
+function slideAnimation ($q, $timeout, Velocity) {
 	var hideAnimation;
 
 	return {
