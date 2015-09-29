@@ -10,7 +10,7 @@
     "protractor": "protractor tests/protractor.conf.js",
     "setuptest": "node_modules/protractor/bin/webdriver-manager update && node_modules/protractor/bin/webdriver-manager start",
     "test": "gulp lint && npm run protractor && npm run karma-single-run",
-    "wiredep": "wiredep -s app/index.html"
+    "wiredep": "wiredep -s app/index.html -e jquery -e velocity.ui.js"
   },
   "author": "Big Wednesday IO",
   "license": "ISC",

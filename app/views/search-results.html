@@ -19,19 +19,21 @@
 		</div>
 
 		<div class="product-thumb__lower">
-			<div class="product-thumb__more-info" ng-show="vm['is-expanded-' + $index]">
-				<div class="product-thumb__long-description">
-					<h4 class="product-thumb__more-info__heading" ng-bind="::product.name"></h4>
-					<p ng-bind="::product.long_description"></p>
-				</div>
-				<div class="product-thumb__product-details">
-					<h4 class="product-thumb__more-info__heading">Product Details</h4>
-					<ul>
-						<li ng-repeat="(attribute, display_name) in ::vm.productAttributes">
-							<strong ng-bind="::display_name + ':'"></strong>
-							<span ng-bind="::product[attribute]"></span>
-						</li>
-					</ul>
+			<div class="animate-slide" ng-show="vm['is-expanded-' + $index]">
+				<div class="product-thumb__more-info">
+					<div class="product-thumb__long-description">
+						<h4 class="product-thumb__more-info__heading" ng-bind="::product.name"></h4>
+						<p ng-bind="::product.long_description"></p>
+					</div>
+					<div class="product-thumb__product-details">
+						<h4 class="product-thumb__more-info__heading">Product Details</h4>
+						<ul>
+							<li ng-repeat="(attribute, display_name) in ::vm.productAttributes">
+								<strong ng-bind="::display_name + ':'"></strong>
+								<span ng-bind="::product[attribute]"></span>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 

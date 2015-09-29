@@ -1,2 +1,2 @@
 angular
-	.module('app', ['ui.router', 'angularModalService']);
+	.module('app', ['ui.router', 'angularModalService', 'ngAnimate']);

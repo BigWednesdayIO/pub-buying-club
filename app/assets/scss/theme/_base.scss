@@ -143,6 +143,8 @@ button {
 	border: 0 none;
 	background: transparent;
 	cursor: pointer;
+	text-align: inherit;
+	line-height: inherit;
 }
 
 .quantity {
@@ -202,4 +204,19 @@ ol {
 strong {
 	// Avoiding faux-bold
 	font-weight: 600;
+}
+
+%collapsible {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height .25s ease-out;
+}
+
+%show-collapsible {
+	max-height: 100vh;
+	transition: max-height .25s ease-in;
+}
+
+.animate-slide {
+	display: none;
 }

@@ -28,6 +28,10 @@
 		a + a {
 			border: 0 none;
 		}
+
+		&.secondary-navigation.secondary-navigation {
+			display: block !important;
+		}
 	}
 
 	a {

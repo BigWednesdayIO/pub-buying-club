@@ -24,15 +24,24 @@
 </div>
 <div class="nav-bar">
 	<button type="button" class="button--secondary button--icon search-button" ng-click="vm.showMenu('search')"><img src="/assets/images/search.svg" height="15" width="15" alt="Search" /></button>
-	<search-bar class="mobile-search" ng-class="{'is-hidden': vm.activeMenu !== 'search'}"></search-bar>
 
 	<button type="button" class="button--secondary button--icon user-button" ng-click="vm.showMenu('user')"><img src="/assets/images/user.svg" height="15" width="15" alt="User menu" /></button>
 
-	<button type="button" class="button--secondary button--icon basket-button"><img src="/assets/images/shopping-cart.svg" height="15" width="15" alt="Basket"></button>
+	<button type="button" class="button--secondary button--icon basket-button" ng-click="vm.showMenu('basket')"><img src="/assets/images/shopping-cart.svg" height="15" width="15" alt="Basket"></button>
 
-	<button type="button" class="button--secondary button--icon menu-button" ng-click="vm.showMenu('primary')"><img src="/assets/images/bars.svg" height="15" width="15" alt="Menu" /></button>
-
-	<!--
-		TODO hook up other buttons
-	/-->
+	<button type="button" class="button--secondary button--icon menu-button" ng-click="vm.showMenu('navigation')"><img src="/assets/images/bars.svg" height="15" width="15" alt="Menu" /></button>
+</div>
+<div class="mobile-menus">
+	<div class="mobile-menu mobile-menu--search animate-slide" ng-show="vm.activeMenu === 'search'">
+		<search-bar></search-bar>
+	</div>
+	<div class="mobile-menu mobile-menu--user animate-slide" ng-show="vm.activeMenu === 'user'">
+		<ul class="mobile-menu--user__inner">
+			<li><a href="/login/select-outlet">Big Wednesday Arms</a></li>
+			<li><button type="button" class="text-only-button" ng-click="vm.logout()">Logout</button></li>
+		</ul>
+	</div>
+	<div class="mobile-menu mobile-menu--basket animate-slide" ng-show="vm.activeMenu === 'basket'">
+		<basket></basket>
+	</div>
 </div>
