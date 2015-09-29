@@ -1,0 +1,17 @@
+.tabset {
+	&__head {
+		display: flex;
+		border-bottom: $border-strong;
+		margin-bottom: $pad;
+	}
+
+	&__button {
+		border-bottom: 0 none;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+
+		& + & {
+			margin-left: $pad/4;
+		}
+	}
+}

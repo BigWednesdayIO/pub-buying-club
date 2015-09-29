@@ -1,7 +1,7 @@
 .multi-select {
 	&__option {
 		& + & {
-			border-top: 1px solid $border-light;
+			border-top: $border;
 		}
 	}
 
@@ -23,7 +23,7 @@
 	}
 
 	&__input:checked + &__label {
-		background: $ui-primary-bg;
+		background: $ui-primary;
 		color: $ui-primary-text;
 
 		&::after {

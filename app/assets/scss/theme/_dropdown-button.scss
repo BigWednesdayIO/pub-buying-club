@@ -1,20 +1,20 @@
 .dropdown-button {
 	margin-top: -1px;
-	max-height: 38px;
+	max-height: 3.6rem;
 
 	&__button {
 		background: white;
-		border: 1px solid $border-light;
+		border: $border;
 		color: $body-text;
 	}
 
 	&__list {
 		background: white;
-		border: 1px solid $border-light;
+		border: $border;
 		border-width: 0 1px;
 
 		> li {
-			border-bottom: 1px solid $border-light;
+			border-bottom: $border;
 		}
 	}
 }

@@ -1,0 +1,19 @@
+<div class="basket__upper">
+	<div class="panel panel--featured">
+		<div style="text-align: center">
+			<h2 class="heading"><span ng-bind="vm.basket.shipping_method"></span> delivery</h2>
+			<span ng-bind="vm.basket.delivery_date | date: 'EEE, d MMM'"></span>
+		</div>
+	</div>
+
+	<div class="basket" ng-include="'/views/partials/basket-table.html'"></div>
+</div>
+
+<div class="basket-summary">
+	<p class="totals">
+		<span class="total excluding-vat"><span ng-bind="vm.basket.subtotal | currency: '£'"></span> exVAT</span>
+		<span class="total including-vat">(<span ng-bind="vm.basket.total | currency: '£'"></span>) incVAT</span>
+	</p>
+	<a href="/checkout/" class="button--primary">Continue</a>
+</div>
+

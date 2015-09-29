@@ -16,7 +16,7 @@ function BasketService ($rootScope, $http, $q, API, universal_variable, browserS
 	};
 
 	service.getBasket = function() {
-		if (!basket_id || browserStorage.getItem('basket_id')) {
+		if (!(basket_id || browserStorage.getItem('basket_id'))) {
 			return $q.reject({
 				message: 'Couldn\'t get basket, no id stored'
 			})
@@ -101,6 +101,25 @@ function BasketService ($rootScope, $http, $q, API, universal_variable, browserS
 		}
 		return service.createBasket();
 	})();
+
+	// TESTING ONLY
+	$rootScope.$watch(function() {
+		return universal_variable.basket;
+	}, function(basket) {
+		var subtotal = basket.line_items.map(function(line_item) {
+				// subtotal in pence
+				return line_item.subtotal * 100;
+			}).reduce(function(subtotal, line_item) {
+				return subtotal + line_item;
+			}, 0),
+			tax = Math.ceil(subtotal * 0.2),
+			total = subtotal + tax;
+
+		universal_variable.basket.total_item_count = basket.line_items.length;
+		universal_variable.basket.subtotal = subtotal / 100;
+		universal_variable.basket.tax = tax / 100;
+		universal_variable.basket.total = total / 100
+	}, true);
 
 	return service;
 }

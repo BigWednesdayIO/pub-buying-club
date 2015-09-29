@@ -17,9 +17,9 @@
 					<tr>
 						<td colspan="2">
 							<div class="week-view__header">
-								<button class="secondary-button week-view__change-week" ng-click="vm.currentPage = vm.currentPage - 1" ng-disabled="vm.currentPage <= 0">〈</button>
+								<button class="button--secondary week-view__change-week" ng-click="vm.currentPage = vm.currentPage - 1" ng-disabled="vm.currentPage <= 0">〈</button>
 								<h3 class="week-view__title">w/c <span ng-bind="vm.visibleWeek[0] | date: 'd MMM'"></span></h3>
-								<button class="secondary-button week-view__change-week" ng-click="vm.currentPage = vm.currentPage + 1" ng-disabled="vm.currentPage >= vm.numberOfPages">〉</button>
+								<button class="button--secondary week-view__change-week" ng-click="vm.currentPage = vm.currentPage + 1" ng-disabled="vm.currentPage >= vm.numberOfPages">〉</button>
 							</div>
 						</td>
 					</tr>
@@ -46,7 +46,7 @@
 			</table>
 
 			<div class="form-row with-cta">
-				<button class="primary-button" ng-click="vm.startShopping()" ng-disabled="!vm.deliveryMethodCode">Start shopping</button>
+				<button class="button--primary" ng-click="vm.startShopping()" ng-disabled="!vm.deliveryMethodCode">Start shopping</button>
 			</div>
 		</div>
 	</div>

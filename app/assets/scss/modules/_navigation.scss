@@ -1,0 +1,49 @@
+.primary-navigation {
+	display: flex;
+	margin-left: $pad;
+
+	a {
+		white-space: nowrap;
+	}
+
+	a + a {
+		margin-left: $pad;
+	}
+}
+
+.secondary-navigation {
+	margin-bottom: $pad;
+	border-bottom: $border;
+
+	@media (min-width: $bp-medium) {
+		max-height: none;
+		transition: none;
+		overflow: visible;
+	}
+
+	&:empty {
+		display: none;
+	}
+
+	a {
+		display: block;
+		padding: $pad-half 0;
+
+		@media (min-width: $bp-medium) {
+			+ a {
+				margin-left: $pad;
+			}
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-flow: column wrap;
+		padding-top: $pad-half;
+		padding-bottom: $pad-half;
+
+		@media (min-width: $bp-medium) {
+			flex-flow: row nowrap;
+		}
+	}
+}

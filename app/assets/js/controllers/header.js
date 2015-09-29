@@ -17,6 +17,7 @@ function HeaderController ($rootScope, $state, authentication) {
 
 	vm.showMenu = function(menu) {
 		vm.activeMenu = (vm.activeMenu === menu) ? null : menu;
+		$rootScope.showMenu = vm.activeMenu === 'navigation';
 	};
 }
 

@@ -2,7 +2,7 @@
 	padding-bottom: $pad-and-half;
 
 	& + & {
-		border-top: 1px solid $border-light;
+		border-top: $border;
 		padding-top: $pad-and-half;
 	}
 
@@ -23,14 +23,14 @@
 	}
 
 	&__lower {
-		background: $brand-light;
-		border: 1px solid $border-light;
+		background: $gradient;
+		border: $border;
 		border-width: 1px 0;
 		padding: $pad-half;
 	}
 
 	&__more-info {
-		border-bottom: 1px solid $border-light;
+		border-bottom: $border;
 		margin: 0 $pad-half*-1 $pad-half;
 		padding: 0 $pad;
 		font-size: 1.4rem;

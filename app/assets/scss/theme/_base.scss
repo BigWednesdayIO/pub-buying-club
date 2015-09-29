@@ -3,22 +3,24 @@ html {
 }
 
 body {
-	font-size: 1.6em;
+	font-size: 1.4em;
 	line-height: 1.6;
-}
-
-body {
 	font-family: $body-font;
 }
 
 // Headings
-h1, h2, h3 {
-	font-weight: lighter;
-	text-transform: uppercase;
+h1, h2, h3, h4 {
+	font-weight: normal;
+	line-height: 1.2;
 }
 
 h1 {
 	margin-top: 0;
+	font-size: 1.9rem;
+
+	@media (min-width: $bp-medium) {
+		font-size: 3.2rem;
+	}
 }
 
 .header-link {
@@ -47,7 +49,6 @@ a,
 
 	&:hover {
 		color: $link-hover;
-		text-decoration: underline;
 	}
 }
 
@@ -62,7 +63,7 @@ button {
 
 input {
 	padding: 0;
-	border: 1px solid $border-color;
+	border: $border-strong;
 	font-size: inherit;
 	line-height: 1em;
 	padding: $pad-half;
@@ -74,49 +75,62 @@ button {
 	box-shadow: none;
 }
 
-.primary-button,
-.secondary-button {
-	padding: $pad-half;
-	border: 1px solid;
-	text-transform: uppercase;
-	text-align: center;
+%button {
+	padding: .4em $pad;
+	line-height: 1.5em;
+	border-radius: 3px;
+	font-weight: 600;
+	font-family: $font-secondary;
 	cursor: pointer;
+	text-transform: uppercase;
 
-	&:hover {
-		text-decoration: none;
-	}
-
-	&:disabled {
-		cursor: initial;
+	& + & {
+		margin-left: $pad-half;
 	}
 }
 
-.primary-button {
-	background: $ui-primary-bg;
+.button--primary {
+	@extend %button;
+	background: $ui-primary;
 	color: $ui-primary-text;
-	border-color: $ui-primary-bg;
+	border: $ui-primary-border;
 
 	&:hover {
 		color: $ui-primary-text;
-	}
-
-	&:disabled {
-		background: $ui-primary-bg-disabled;
-		border-color: $ui-primary-bg-disabled;
-		color: $ui-primary-text-disabled;
+		background: $ui-primary-highlight;
 	}
 }
 
-.secondary-button {
-	background: $ui-secondary-bg;
+.button--secondary {
+	@extend %button;
+	background: $ui-secondary;
 	color: $ui-secondary-text;
+	border: $ui-secondary-border;
 
 	&:hover {
-		color: $ui-secondary-text;
+		background: $ui-secondary-highlight;
+		border-color: $ui-secondary-highlight-border-color;
+	}
+}
+
+.button--hero {
+	font-size: inherit;
+}
+
+.button--icon {
+	@extend %button;
+	line-height: 0.1;
+}
+
+%clearfix {
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
 	}
 
-	&:disabled {
-		color: $border-light;
+	&::after {
+		clear: both;
 	}
 }
 
@@ -129,6 +143,8 @@ button {
 	border: 0 none;
 	background: transparent;
 	cursor: pointer;
+	text-align: inherit;
+	line-height: inherit;
 }
 
 .quantity {
@@ -159,8 +175,18 @@ ol {
 }
 
 .panel {
-	background: $brand-light;
+	background: $gradient;
 	padding: $pad;
+
+	&--featured {
+		color: $ui-primary-text;
+		background: $ui-primary;
+
+		.heading {
+			font-size: 1.3em;
+			margin: 0;
+		}
+	}
 }
 
 // Utility
@@ -173,4 +199,24 @@ ol {
 	margin: -1px;
 	padding: 0;
 	border: 0;
+}
+
+strong {
+	// Avoiding faux-bold
+	font-weight: 600;
+}
+
+%collapsible {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height .25s ease-out;
+}
+
+%show-collapsible {
+	max-height: 100vh;
+	transition: max-height .25s ease-in;
+}
+
+.animate-slide {
+	display: none;
 }

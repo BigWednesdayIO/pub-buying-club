@@ -23,5 +23,10 @@
 		> li {
 			padding: $pad/4 $pad-half;
 		}
+
+		.text-only-button {
+			display: block;
+			width: 100%;
+		}
 	}
 }

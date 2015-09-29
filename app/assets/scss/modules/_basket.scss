@@ -1,15 +1,11 @@
 .basket {
-	font-size: 1.4rem;
+	font-size: 1.3rem;
+	padding: $pad-half 0;
 
 	td {
-		padding: $pad-half $pad/4;
-
-		&:first-child {
-			padding-left: 0;
-		}
+		padding: $pad-half $pad-half;
 
 		&:last-child {
-			padding-right: 0;
 			text-align: right;
 		}
 	}
@@ -27,15 +23,15 @@
 
 	.total {
 		display: block;
-		line-height: 1.3;
+		line-height: 1.4;
 	}
 
 	.excluding-vat {
-		font-size: 1.4em;
+		font-size: 1.25em;
 	}
 
 	.including-vat {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 }
 

@@ -8,6 +8,8 @@
 
 		<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
 		<link rel="favicon" href="favicon.ico" />
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,500,500italic,300,300italic">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
 
 		<!-- bower:css -->
 		<!-- endbower -->
@@ -18,7 +20,7 @@
 	<body>
 		<header ui-view="header"></header>
 		<div ui-view="secondary-navigation"></div>
-		<div ui-view></div>
+		<div class="the-middle" ui-view></div>
 		<footer ui-view="footer"></footer>
 
 		<!-- bower:js -->
@@ -27,6 +29,8 @@
 		<script src="assets/vendor/angular-modal-service/dst/angular-modal-service.js"></script>
 		<script src="assets/vendor/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="assets/vendor/lodash/lodash.js"></script>
+		<script src="assets/vendor/angular-animate/angular-animate.js"></script>
+		<script src="assets/vendor/velocity/velocity.js"></script>
 		<!-- endbower -->
 		<script src="/assets/js/app.js"></script>
 	</body>
