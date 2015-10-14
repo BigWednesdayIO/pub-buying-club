@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "main": "app/index.html",
+  "engines": {
+    "node": ">=4.1.1",
+    "npm": ">=3.3.3"
+  },
   "scripts": {
     "postinstall": "bower install && npm run wiredep",
     "karma": "karma start tests/karma.conf.js",
@@ -32,7 +36,7 @@
     "karma-junit-reporter": "^0.3.3",
     "ng-annotate": "^1.0.2",
     "node-sass": "^3.3.1",
-    "protractor": "github:mstrutt/protractor#master",
+    "protractor": "^2.5.1",
     "selenium-webdriver": "^2.45.1",
     "shelljs": "^0.5.3",
     "wiredep": "^3.0.0-beta"
