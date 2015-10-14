@@ -5,18 +5,8 @@
 		box-shadow: $section-shadow;
 	}
 
-	td {
-		vertical-align: top;
-	}
-
 	.quantity-filed {
 		vertical-align: middle;
-	}
-
-	tr + tr {
-		td {
-			border-top: $border-strong;
-		}
 	}
 
 	.product-name,

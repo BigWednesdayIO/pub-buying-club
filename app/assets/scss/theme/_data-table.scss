@@ -1,0 +1,55 @@
+.data-table {
+	thead {
+		background: $ui-primary;
+		color: $ui-primary-text;
+
+		th {
+			padding-top: $pad*.75;
+			padding-bottom: $pad*.75;
+		}
+	}
+
+	th {
+		text-align: left;
+	}
+
+	td,
+	th {
+		padding: $pad-half $pad-half;
+		vertical-align: top;
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+
+	tr + tr {
+		td,
+		th {
+			border-top: $border-strong;
+		}
+	}
+
+	tfoot {
+		border-top: $border-strong;
+
+		th {
+			text-align: right;
+			font-weight: 600;
+		}
+	}
+}
+
+.order-table {
+	margin: $pad 0;
+	background: $gradient;
+	box-shadow: $section-shadow;
+
+	.quantity {
+		text-align: right;
+	}
+
+	td.total {
+		font-weight: 600;
+	}
+}

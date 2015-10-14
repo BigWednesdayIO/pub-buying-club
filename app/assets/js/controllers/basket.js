@@ -28,6 +28,9 @@ function BasketController ($scope, basketService, deliveryDatesService, universa
 
 // NOTE only used by the checkout basket state, not the basket directive
 BasketController.resolve = /* @ngInject */ {
+	title: function($rootScope) {
+		return $rootScope.title = 'Review your order';
+	},
 	upToDateBasket: function(basketService) {
 		return basketService
 			.getBasket();

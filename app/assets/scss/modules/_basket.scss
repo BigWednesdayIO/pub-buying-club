@@ -2,14 +2,6 @@
 	font-size: 1.3rem;
 	padding: $pad-half 0;
 
-	td {
-		padding: $pad-half $pad-half;
-
-		&:last-child {
-			text-align: right;
-		}
-	}
-
 	.product-name,
 	.product-description {
 		margin: 0;

@@ -78,7 +78,8 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 		.state('checkout', {
 			views: {
 				'header@': {
-					templateUrl: 'views/partials/header--checkout.html'
+					templateUrl: 'views/partials/header--checkout.html',
+					controller: 'HeaderController as vm'
 				},
 				'@': {
 					templateUrl: 'views/layouts/narrow.html'
@@ -96,6 +97,17 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
 						templateUrl: 'views/checkout-basket.html',
 						controller: 'BasketController as vm',
 						resolve: BasketController.resolve
+					}
+				}
+			})
+			.state('order-confirmation', {
+				parent: 'checkout',
+				url: '/checkout/order-confirmation',
+				views: {
+					'main@checkout': {
+						templateUrl: 'views/order-confirmation.html',
+						controller: 'OrderConfirmationController as vm',
+						resolve: OrderConfirmationController.resolve
 					}
 				}
 			});

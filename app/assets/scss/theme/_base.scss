@@ -87,6 +87,12 @@ button {
 	& + & {
 		margin-left: $pad-half;
 	}
+
+	.icon {
+		position: relative;
+		top: .2em;
+		margin-right: .1em;
+	}
 }
 
 .button--primary {

@@ -1,0 +1,44 @@
+<table class="data-table">
+	<thead>
+		<tr>
+			<th scope="col">Item</th>
+			<th scope="col">Size</th>
+			<th scope="col">exVAT</th>
+			<th scope="col" class="quantity">Quantity</th>
+			<th scope="col" class="total">Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="line_item in vm.order.line_items">
+			<td ng-bind="line_item.product.name"></td>
+			<td>
+				<span ng-bind="line_item.product.size"></span> <span ng-bind="line_item.product.pack_type"></span>
+			</td>
+			<td ng-bind="line_item.product.unit_price | currency:'£'"></td>
+			<td class="quantity" ng-bind="line_item.quantity"></td>
+			<td class="total" ng-bind="line_item.subtotal | currency:'£'"></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="4" scope="row">Sub total</th>
+			<td ng-bind="vm.order.subtotal | currency:'£'"></td>
+		</tr>
+		<tr>
+			<th colspan="4" scope="row">Delivery</th>
+			<td ng-bind="vm.order.delivery_charge || 0 | currency:'£'"></td>
+		</tr>
+		<tr>
+			<th colspan="4" scope="row">Total exVAT</th>
+			<td ng-bind="vm.order.subtotal | currency:'£'"></td>
+		</tr>
+		<tr>
+			<th colspan="4" scope="row">Total VAT</th>
+			<td ng-bind="vm.order.tax | currency:'£'"></td>
+		</tr>
+		<tr>
+			<th colspan="4" scope="row">Total incVAT</th>
+			<td ng-bind="vm.order.total | currency:'£'"></td>
+		</tr>
+	</tfoot>
+</table>
