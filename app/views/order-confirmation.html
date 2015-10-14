@@ -1,0 +1,17 @@
+<h2>Thank you for your order</h2>
+
+<p>Please make a note of the order number below for future reference. You will shortly receive a confirmation by email.</p>
+
+<p>
+	<button class="button--secondary" ng-click="vm.printOrder()"><img class="icon" src="/assets/images/print.svg" height="15" width="15" alt=""> Print</button>
+	<a href="/shop/your%20usual" class="button--primary">Back to shop</a>
+</p>
+
+<ul>
+	<li><strong>Order number</strong> <span ng-bind="vm.order.id"></span></li>
+	<li><strong>Order date</strong> <span ng-bind="vm.order.date_placed | date: 'EEE, d MMM'"></span></li>
+	<li><strong>Delivery date</strong> <span ng-bind="vm.order.delivery_date | date: 'EEE, d MMM'"></span></li>
+	<li><strong>Delivery window</strong> <span ng-bind="vm.order.delivery_window"></span></li>
+</ul>
+
+<div class="order-table data-table" ng-include="'/views/partials/order-table.html'"></div>

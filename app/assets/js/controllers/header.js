@@ -19,6 +19,11 @@ function HeaderController ($rootScope, $state, authentication) {
 		vm.activeMenu = (vm.activeMenu === menu) ? null : menu;
 		$rootScope.showMenu = vm.activeMenu === 'navigation';
 	};
+
+	vm.title = $rootScope.title;
+	$rootScope.$on('$stateChangeSuccess', function() {
+		vm.title = $rootScope.title;
+	});
 }
 
 angular
